@@ -1,0 +1,10 @@
+// scss-docs-start theme-color-variables
+$primary: #4a71a8;
+$secondary: #f9e6b3;
+$dark: #ead7a3;
+$light: rgba(255, 255, 255, 0.55);
+// scss-docs-end theme-color-variables
+
+$input-placeholder-color: gray;
+// IMPORT BOOTSTRAP
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
