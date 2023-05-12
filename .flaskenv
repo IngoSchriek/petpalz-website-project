@@ -1,0 +1,2 @@
+FLASK_APP=petpalz_app
+FLASK_DEBUG=True
