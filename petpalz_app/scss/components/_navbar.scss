@@ -3,7 +3,8 @@
 ////////////////// MAIN NAVBAR START /////////////////////
 
 @include media-breakpoint-up(md) {
-  .navbar__logo {
+
+  .navbar__logo, .navbar-brand {
     width: 150px;
   }
 
@@ -16,6 +17,10 @@
 }
 
 @include media-breakpoint-down(md) {
+  .navbar-brand {
+    width: 100px;
+  }
+
   .navbar {
     padding-bottom: 0;
   }
@@ -57,30 +62,19 @@
     .col-logo {
       justify-content: center;
       grid-area: logo;
-      #navbar__logo {
-        width: 100px;
-        margin-bottom: 10px;
-        @media (max-width: 362px) {
-          width: 80px;
-        }
+    }
+
+    .navbar__logo {
+      width: 100px !important;
+      margin-bottom: 10px;
+      @media (max-width: 362px) {
+        width: 80px !important;
       }
     }
 
     .col-ruser-content {
       grid-area: ruser-content;
       justify-content: flex-end;
-      .user-content__ico {
-        &:not(:last-of-type) {
-          margin-right: 50px;
-          @include media-breakpoint-down(sm) {
-            margin-right: 30px;
-          }
-          @media (max-width: 362px) {
-            margin-right: 10px;
-          }
-        }
-      }
-
       .user-account {
         display: none !important;
       }

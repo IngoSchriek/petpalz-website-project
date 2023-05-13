@@ -27,6 +27,32 @@ pages = Blueprint(
 
 #     return route_wrapper
 
-@pages.route('/')
+
+@pages.route("/")
 def home():
-    return render_template('home.html', title="PetPalz - Home")
+    return render_template("home.html", title="PetPalz - Home")
+
+
+@pages.route("/product")
+def product():
+    return render_template("product.html", title="PetPalz - Product")
+
+
+@pages.route("/login")
+def login():
+    return render_template("login.html", title="PetPalz - Login")
+
+
+@pages.route("/logout")
+def logout():
+    return None
+
+
+@pages.route("/register")
+def register():
+    return render_template("register.html", title="PetPalz - Register")
+
+
+@pages.route("/cart")
+def cart():
+    return render_template("cart.html", title="PetPalz - Cart")

@@ -14,12 +14,16 @@
         >
           <i class="fas fa-angles-right fs-4"></i>
         </button>
-        <a href="#" class="text-decoration-none d-md-none">
+        <a href="{{ url_for('pages.login') }}" class="text-decoration-none d-md-none">
           <i class="fas fa-user-large fs-4"></i>
         </a>
       </div>
       <div class="col-logo col-lg-2 col-md-2 d-flex justify-content-md-end">
-        <a id="navbar__logo" class="navbar__logo text-md-end" href="#">
+        <a
+          id="navbar__logo"
+          class="navbar__logo text-md-end"
+          href="{{ url_for('pages.home') }}"
+        >
           <img class="w-100" src="../static/img/PET PALZ.png" alt="Pet Palz Logo"
         /></a>
       </div>
@@ -30,7 +34,7 @@
         </div>
       </div>
       <div class="col-ruser-content col-lg-3 col-md-4">
-        <button class="user-account btn btn-light pe-4">
+        <a href="{{ url_for('pages.login') }}" class="user-account btn btn-light pe-4">
           <div class="col-6 d-flex justify-content-center">
             <i class="far fa-user fs-4"></i>
           </div>
@@ -38,11 +42,11 @@
             <h3>Entrar</h3>
             <p>Cadastrar</p>
           </div>
-        </button>
-        <a class="user-content__ico text-decoration-none">
-          <i class="fas fa-heart fs-4"></i>
         </a>
-        <a class="user-content__ico text-decoration-none">
+        <a
+          class="user-content__ico text-decoration-none"
+          href="{{ url_for('pages.cart') }}"
+        >
           <i class="fas fa-cart-shopping fs-4"></i>
         </a>
       </div>
@@ -77,11 +81,11 @@
               <a href="#" class="btn dropdown-btn px-3 py-2"> Cachorros </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="">Rações</a></li>
-                <li><a class="dropdown-item" href="">Roupas e Acessórios</a></li>
-                <li><a class="dropdown-item" href="">Petiscos e Ossinhos</a></li>
-                <li><a class="dropdown-item" href="">Limpeza e Beleza</a></li>
-                <li><a class="dropdown-item" href="">Remédios</a></li>
-                <li><a class="dropdown-item" href="">Casas e Tocas</a></li>
+                <li><a class="dropdown-item disabled">Roupas e Acessórios</a></li>
+                <li><a class="dropdown-item disabled">Petiscos e Ossinhos</a></li>
+                <li><a class="dropdown-item disabled">Limpeza e Beleza</a></li>
+                <li><a class="dropdown-item disabled">Remédios</a></li>
+                <li><a class="dropdown-item disabled">Casas e Tocas</a></li>
               </ul>
             </li>
 
@@ -93,12 +97,12 @@
               <a href="#" class="btn drop dropdown-btn px-3 py-2"> Gatos </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="">Rações</a></li>
-                <li><a class="dropdown-item" href="">Roupas e Acessórios</a></li>
-                <li><a class="dropdown-item" href="">Petiscos</a></li>
-                <li><a class="dropdown-item" href="">Limpeza e Beleza</a></li>
-                <li><a class="dropdown-item" href="">Remédios</a></li>
-                <li><a class="dropdown-item" href="">Higiene e Caixas de Areia</a></li>
-                <li><a class="dropdown-item" href="">Caminhas e Arranhadores</a></li>
+                <li><a class="dropdown-item disabled">Roupas e Acessórios</a></li>
+                <li><a class="dropdown-item disabled">Petiscos</a></li>
+                <li><a class="dropdown-item disabled">Limpeza e Beleza</a></li>
+                <li><a class="dropdown-item disabled">Remédios</a></li>
+                <li><a class="dropdown-item disabled">Higiene e Caixas de Areia</a></li>
+                <li><a class="dropdown-item disabled">Caminhas e Arranhadores</a></li>
               </ul>
             </li>
 
@@ -109,10 +113,10 @@
             >
               <a href="#" class="btn dropdown-btn px-3 py-2"> Outros Pets </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="">Peixes</a></li>
-                <li><a class="dropdown-item" href="">Pássaros</a></li>
-                <li><a class="dropdown-item" href="">Roedores</a></li>
-                <li><a class="dropdown-item" href="">Répteis</a></li>
+                <li><a class="dropdown-item disabled">Peixes</a></li>
+                <li><a class="dropdown-item disabled">Pássaros</a></li>
+                <li><a class="dropdown-item disabled">Roedores</a></li>
+                <li><a class="dropdown-item disabled">Répteis</a></li>
               </ul>
             </li>
           </ul>
@@ -124,9 +128,9 @@
             >
               <a href="#" class="btn dropdown-btn px-3 py-2"> Serviços </a>
               <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item disabled" href="">Veterinário</a></li>
-                <li><a class="dropdown-item disabled" href="">Adestramento</a></li>
-                <li><a class="dropdown-item disabled" href="">Outros</a></li>
+                <li><a class="dropdown-item disabled">Veterinário</a></li>
+                <li><a class="dropdown-item disabled">Adestramento</a></li>
+                <li><a class="dropdown-item disabled">Outros</a></li>
               </ul>
             </li>
             <li
@@ -136,9 +140,9 @@
             >
               <a href="#" class="btn dropdown-btn px-3 py-2"> Mais </a>
               <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item disabled" href="#">Parceiros</a></li>
-                <li><a class="dropdown-item disabled" href="#">Marcas</a></li>
-                <li><a class="dropdown-item disabled" href="#">Outros</a></li>
+                <li><a class="dropdown-item disabled">Parceiros</a></li>
+                <li><a class="dropdown-item disabled">Marcas</a></li>
+                <li><a class="dropdown-item disabled">Outros</a></li>
               </ul>
             </li>
           </ul>
