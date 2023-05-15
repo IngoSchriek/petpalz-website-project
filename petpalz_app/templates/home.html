@@ -1,3 +1,100 @@
 <!DOCTYPE html>
-{% extends 'layout.html' %}
-
+{% extends 'layout.html' %} {% block main_content %}
+<div class="container-xxl container-fluid">
+  <div
+    id="carouselExampleAutoplaying"
+    class="carousel carousel-dark slide mb-5"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <a href="{{ url_for('pages.home') }}">
+          <img
+            src="../static/img/banner1.jpg"
+            class="d-md-block d-none w-100"
+            alt="Responsive Banner"
+          />
+        </a>
+        <a href="{{ url_for('pages.home') }}">
+          <img
+            src="../static/img/banner2.jpg"
+            class="d-md-none d-sm-block d-none w-100"
+            alt="Responsive Banner"
+          />
+        </a>
+        <a href="{{ url_for('pages.home') }}">
+          <img
+            src="../static/img/banner3.jpg"
+            class="d-sm-none d-block w-100"
+            alt="Responsive Banner"
+          />
+        </a>
+      </div>
+      <div class="carousel-item">
+        <a href="{{ url_for('pages.home') }}">
+          <img
+            src="../static/img/banner1.jpg"
+            class="d-md-block d-none w-100"
+            alt="Responsive Banner"
+          />
+        </a>
+        <a href="{{ url_for('pages.home') }}">
+          <img
+            src="../static/img/banner2.jpg"
+            class="d-md-none d-sm-block d-none w-100"
+            alt="Responsive Banner"
+          />
+        </a>
+        <a href="{{ url_for('pages.home') }}">
+          <img
+            src="../static/img/banner3.jpg"
+            class="d-sm-none d-block w-100"
+            alt="Responsive Banner"
+          />
+        </a>
+      </div>
+      <div class="carousel-item">
+        <a href="{{ url_for('pages.home') }}">
+          <img
+            src="../static/img/banner1.jpg"
+            class="d-md-block d-none w-100"
+            alt="Responsive Banner"
+          />
+        </a>
+        <a href="{{ url_for('pages.home') }}">
+          <img
+            src="../static/img/banner2.jpg"
+            class="d-md-none d-sm-block d-none w-100"
+            alt="Responsive Banner"
+          />
+        </a>
+        <a href="{{ url_for('pages.home') }}">
+          <img
+            src="../static/img/banner3.jpg"
+            class="d-sm-none d-block w-100"
+            alt="Responsive Banner"
+          />
+        </a>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock main_content %}
