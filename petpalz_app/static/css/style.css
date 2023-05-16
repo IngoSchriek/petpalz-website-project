@@ -11978,6 +11978,7 @@ textarea.form-control-lg {
 .col-ruser-content .user-account {
   display: flex;
   align-items: center;
+  width: 134px;
 }
 .col-ruser-content .user-account div .far {
   margin-right: 10px;
@@ -12080,6 +12081,51 @@ body {
 
 .carousel {
   margin-top: 120px;
+}
+
+.feature div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.feature div h3,
+.feature div i {
+  color: #343a40;
+}
+.feature div h3 em,
+.feature div i em {
+  color: #4a71a8;
+  font-style: normal;
+}
+@media (max-width: 575.98px) {
+  .feature div h3,
+  .feature div i {
+    font-size: 0.7rem;
+  }
+}
+@media (min-width: 576px) {
+  .feature div h3,
+  .feature div i {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 768px) {
+  .feature div h3,
+  .feature div i {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 992px) {
+  .feature div h3,
+  .feature div i {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  .feature div h3,
+  .feature div i {
+    font-size: 1.1rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

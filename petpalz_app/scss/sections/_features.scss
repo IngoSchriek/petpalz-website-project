@@ -1,0 +1,29 @@
+@use "../custom" as *;
+.feature div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h3,
+  i {
+    color: $gray-800;
+    em {
+      color: $primary;
+      font-style: normal;
+    }
+    @include media-breakpoint-down(sm) {
+        font-size: 0.7rem;
+      }
+    @include media-breakpoint-up(sm) {
+        font-size: 0.8rem;
+      }
+    @include media-breakpoint-up(md) {
+        font-size: 0.8rem;
+      }
+    @include media-breakpoint-up(lg) {
+      font-size: 1rem;
+    }
+    @include media-breakpoint-up(xl) {
+        font-size: 1.1rem;
+      }
+  }
+}
