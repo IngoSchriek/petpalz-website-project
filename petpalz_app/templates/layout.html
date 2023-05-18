@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-{% from 'macros/navbar.html' import navbar %}
-{% from 'macros/footer.html' import footer %}
+{% from 'macros/navbar.html' import navbar %} {% from 'macros/footer.html' import footer
+%}
 
 <html lang="en">
   <head>
@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title | default('PetPalz - Home') }}</title>
     <link rel="stylesheet" href="static/css/style.css" />
-    <link rel="stylesheet" href="static/vendors/css/all.min.css" />
     <link rel="stylesheet" href="static/vendors/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="static/vendors/css/all.min.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -18,22 +18,17 @@
   </head>
   <body>
     <!--//////////// NAVBAR START  ////////////-->
-    {% block header %}
-    {{ navbar(session.get(email), session.get(language)) }}
-    {% endblock header %}
+    {% block header %} {{ navbar(session.get(email), session.get(language)) }} {% endblock
+    header %}
     <!--//////////// NAVBAR END  ////////////-->
-    {% block main_content %}
-    <main>
-      <div style="height: 9999px; background-color: white;"></div>
-    </main>
-    {% endblock main_content %}
-    
-    <!-- ////// FOOTER START ////// -->
-    {% block footer %}
-    {{ footer() }}
-    {% endblock footer %}
+    <main>{% block main_content %} {% endblock main_content %}</main>
 
-    <script src="static/js/main.js"></script>
-    <script src="static/js/bootstrap.bundle.min.js"></script>
+    <!-- ////// FOOTER START ////// -->
+    <footer class="p-5 bg-secondary">
+      {% block footer %} {{ footer() }} {% endblock footer %}
+    </footer>
+
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/main.js"></script>
   </body>
 </html>

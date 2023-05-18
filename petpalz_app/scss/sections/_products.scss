@@ -1,0 +1,32 @@
+@use "../custom" as *;
+
+.product-card {
+  h3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+
+  .price-holder {
+    .price {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .original-price {
+      color: $gray-700;
+      font-weight: 600;
+      font-size: 0.7rem;
+      text-decoration-line: line-through;
+    }
+    .times-price {
+      font-weight: 400;
+      min-height: 1rem;
+      font-size: 0.7rem;
+      color: $gray-700;
+    }
+  }
+}

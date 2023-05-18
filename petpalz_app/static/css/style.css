@@ -12029,13 +12029,17 @@ textarea.form-control-lg {
     font-size: 13px;
     border-radius: 0 0 0 4px;
   }
+  main {
+    padding-bottom: 20px;
+  }
   main,
   footer {
-    transition: filter 0.3s ease-in;
+    background-color: #fff;
+    transition: filter 0.3s ease-in !important;
   }
   main.darken-on-hover,
   footer.darken-on-hover {
-    filter: brightness(50%);
+    filter: brightness(50%) !important;
   }
 }
 @media (max-width: 767.98px) {
@@ -12126,6 +12130,32 @@ body {
   .feature div i {
     font-size: 1.1rem;
   }
+}
+
+.product-card h3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.product-card .price-holder .price {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.product-card .price-holder .original-price {
+  color: #495057;
+  font-weight: 600;
+  font-size: 0.7rem;
+  text-decoration-line: line-through;
+}
+.product-card .price-holder .times-price {
+  font-weight: 400;
+  min-height: 1rem;
+  font-size: 0.7rem;
+  color: #495057;
 }
 
 /*# sourceMappingURL=style.css.map */

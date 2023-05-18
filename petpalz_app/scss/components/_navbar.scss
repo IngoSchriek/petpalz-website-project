@@ -208,11 +208,16 @@
     }
   }
 
+  main {
+    padding-bottom: 20px;
+  }
+
   main,
   footer {
-    transition: filter 0.3s ease-in;
+    background-color: $white;
+    transition: filter 0.3s ease-in !important;
     &.darken-on-hover {
-      filter: brightness(50%);
+      filter: brightness(50%) !important;
     }
   }
 }
