@@ -1,5 +1,5 @@
 @use "../custom" as *;
-.feature div{
+.feature div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,19 +11,29 @@
       font-style: normal;
     }
     @include media-breakpoint-down(sm) {
-        font-size: 0.7rem;
-      }
+      font-size: 0.9rem;
+
+    }
     @include media-breakpoint-up(sm) {
-        font-size: 0.8rem;
-      }
+      font-size: 0.9rem;
+    }
     @include media-breakpoint-up(md) {
-        font-size: 0.8rem;
-      }
+      font-size: 0.9rem;
+    }
     @include media-breakpoint-up(lg) {
       font-size: 1rem;
     }
     @include media-breakpoint-up(xl) {
-        font-size: 1.1rem;
-      }
+      font-size: 1.2rem;
+    }
+    @include media-breakpoint-up(xxl) {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .feature {
+    height: 30px !important;
   }
 }

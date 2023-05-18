@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 {% extends 'layout.html' %} {% block main_content %}
 <!-- ///////////////////////////////////////////////////// -->
+<!-- ///////////////// TAKE 5 PAY 4 SECTION ///////////////// -->
+<!-- ///////////////////////////////////////////////////// -->
+<div class="container-fluid takepay pt-2 text-center" style="background-color: #d3e6ffa4;">
+<h4 class="mt-5 text-info fw-bold">The best online pet shop!</h4>
+</div>
+<!-- ///////////////////////////////////////////////////// -->
 <!-- ///////////////// RESPONSIVE BANNER ///////////////// -->
 <!-- ///////////////////////////////////////////////////// -->
-<div class="container-xxl container-fluid">
+<div class="container-fluid">
   <div
     id="carousel1Autoplaying"
-    class="carousel carousel-dark slide mb-5"
+    class="carousel banner carousel-dark slide rounded-pill mb-5 shadow-lg"
     data-bs-ride="carousel"
   >
     <div class="carousel-inner">
@@ -103,56 +109,58 @@
 <!-- ///////////////////////////////////////////////////// -->
 <!-- ///////////////////// FEATURES ////////////////////// -->
 <!-- ///////////////////////////////////////////////////// -->
-<div class="container-md container-fluid justify-content-center">
-  <div class="row gap-5 justify-content-md-between justify-content-center m-sm-1">
-    <div class="col-md-2 col-4">
-      <div class="feature row gx-lg-0 gx-md-1 gx-sm-4">
-        <div class="col-4">
+<div class="container-fluid justify-content-center">
+  <div
+    class="row justify-content-center align-items-center gap-md-5 column-gap-4 row-gap-2 m-sm-1"
+  >
+    <div class="col-md-auto col-5 px-auto py-md-1 py-3 bg-info">
+      <div class="feature row">
+        <div class="col-4 p-0">
           <i class="fa-solid fa-truck-fast"></i>
         </div>
-        <div class="col-8">
-          <h3><em>Free</em> shipping</h3>
+        <div class="col-8 p-0 justify-content-start">
+          <h3 class="mb-1 p-md-0 pe-1"><em>Free</em> shipping</h3>
         </div>
       </div>
     </div>
-    <div class="col-md-2 col-4">
-      <div class="feature row gx-lg-0 gx-md-1 gx-sm-4">
-        <div class="col-4">
+    <div class="col-md-auto col-5 px-auto py-md-1 py-3 bg-info">
+      <div class="feature row">
+        <div class="col-4 p-0">
           <i class="fa-solid fa-hand-holding-heart"></i>
         </div>
-        <div class="col-8">
-          <h3>Better for your <em>pet</em></h3>
+        <div class="col-8 p-0 justify-content-start">
+          <h3 class="mb-1 p-md-0 pe-1">Better for your <em>pet</em></h3>
         </div>
       </div>
     </div>
-    <div class="col-md-2 col-4">
-      <div class="feature row gx-lg-0 gx-md-1 gx-sm-4">
-        <div class="col-4">
+    <div class="col-md-auto col-5 px-auto py-md-1 py-3 bg-info">
+      <div class="feature row">
+        <div class="col-4 p-0">
           <i class="fa-solid fa-business-time"></i>
         </div>
-        <div class="col-8">
-          <h3><em>Fastest</em> delivery</h3>
+        <div class="col-8 p-0 justify-content-start">
+          <h3 class="mb-1 p-md-0 pe-1"><em>Fastest</em> delivery</h3>
         </div>
       </div>
     </div>
-    <div class="col-md-2 col-4">
-      <div class="feature row gx-lg-0 gx-md-1 gx-sm-4">
-        <div class="col-4">
+    <div class="col-md-auto col-5 px-auto py-md-1 py-3 bg-info">
+      <div class="feature row">
+        <div class="col-4 p-0">
           <i class="fa-solid fa-ranking-star"></i>
         </div>
-        <div class="col-8">
-          <h3>The <em>best</em> offers</h3>
+        <div class="col-8 p-0 justify-content-start">
+          <h3 class="mb-1 p-md-0 pe-1">The <em>best</em> offers</h3>
         </div>
       </div>
     </div>
   </div>
 </div>
 <!-- ///////////////////////////////////////////////////// -->
-<!-- ///////////////////// PRODUCTS ////////////////////// -->
+<!-- /////////////////// PRODUCTS //////////////////////// -->
 <!-- ///////////////////////////////////////////////////// -->
 <div class="container-md container-fluid my-5">
   <div class="row text-primary text-center">
-    <h1 class="fw-bold">Recommended Products</h1>
+    <h1 class="fw-bold">Best sellers</h1>
   </div>
   <div
     id="carousel2Autoplaying"
@@ -332,6 +340,582 @@
         class="carousel-control-next"
         type="button"
         data-bs-target="#carousel2Autoplaying"
+        data-bs-slide="next"
+      >
+        <i class="fa-solid fa-circle-arrow-right fs-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////// -->
+<!-- ///////////////// TOP BRANDS //////////////////////// -->
+<!-- ///////////////////////////////////////////////////// -->
+<div class="container-md container-fluid my-5">
+  <div class="row text-primary text-center">
+    <h1 class="fw-bold">Top Brands</h1>
+  </div>
+  <div
+    id="carousel2Autoplaying"
+    class="carousel carousel-dark slide mb-5 mt-2"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row justify-content-between">
+          <div class="col-md-2 col-4 p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-4 p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-4 p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 d-md-block d-none p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 d-md-block d-none p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="row justify-content-between">
+          <div class="col-md-2 col-4 p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-4 p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-4 p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 d-md-block d-none p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 d-md-block d-none p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carousel2Autoplaying"
+        data-bs-slide="prev"
+      >
+        <i class="fa-solid fa-circle-arrow-left fs-1"></i>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carousel2Autoplaying"
+        data-bs-slide="next"
+      >
+        <i class="fa-solid fa-circle-arrow-right fs-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////// -->
+<!-- //////////////// CAT FAVORITES ////////////////////// -->
+<!-- ///////////////////////////////////////////////////// -->
+<div class="container-md container-fluid my-5">
+  <div class="row text-primary text-center">
+    <h1 class="fw-bold">Cat Favorites</h1>
+  </div>
+  <div
+    id="carousel3Autoplaying"
+    class="carousel carousel-dark slide mb-5 mt-2"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row justify-content-between">
+          <div class="col-md-2 col-4 p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-4 p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-4 p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 d-md-block d-none p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 d-md-block d-none p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="row justify-content-between">
+          <div class="col-md-2 col-4 p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-4 p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-4 p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 d-md-block d-none p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 d-md-block d-none p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carousel3Autoplaying"
+        data-bs-slide="prev"
+      >
+        <i class="fa-solid fa-circle-arrow-left fs-1"></i>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carousel3Autoplaying"
+        data-bs-slide="next"
+      >
+        <i class="fa-solid fa-circle-arrow-right fs-1"></i>
+      </button>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////// -->
+<!-- //////////////// DOG FAVORITES ////////////////////// -->
+<!-- ///////////////////////////////////////////////////// -->
+<div class="container-md container-fluid my-5">
+  <div class="row text-primary text-center">
+    <h1 class="fw-bold">Dog Favorites</h1>
+  </div>
+  <div
+    id="carousel4Autoplaying"
+    class="carousel carousel-dark slide mb-5 mt-2"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row justify-content-between">
+          <div class="col-md-2 col-4 p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-4 p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-4 p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 d-md-block d-none p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 d-md-block d-none p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="row justify-content-between">
+          <div class="col-md-2 col-4 p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-4 p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-4 p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 d-md-block d-none p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 d-md-block d-none p-3">
+            <a class="text-decoration-none" href="#">
+              <div class="product-card card border-0">
+                <img class="px-1 pb-4" src="../static/img/CatFood1.jpg" alt="CatFood1" />
+                <h3>Cat food bla bla bla bla bla bla blaaaaaaaaaa</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $40,00 </span>
+                    <span class="original-price"> $60,00 </span>
+                  </div>
+                  <span class="times-price">or 4 times of $15,00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carousel4Autoplaying"
+        data-bs-slide="prev"
+      >
+        <i class="fa-solid fa-circle-arrow-left fs-1"></i>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carousel4Autoplaying"
         data-bs-slide="next"
       >
         <i class="fa-solid fa-circle-arrow-right fs-1"></i>

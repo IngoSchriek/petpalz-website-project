@@ -1,0 +1,20 @@
+@use "../custom" as *;
+
+.takepay {
+  margin-top: 70px;
+  padding-bottom: 1px;
+  h4 {
+    @include media-breakpoint-down(sm) {
+      font-size: 0.675rem !important;
+    }
+    @include media-breakpoint-up(sm) {
+      font-size: 0.675rem !important;
+    }
+    @include media-breakpoint-up(md) {
+      font-size: 0.775rem !important;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 0.875rem !important;
+    }
+  }
+}
