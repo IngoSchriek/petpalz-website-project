@@ -7,7 +7,7 @@
   i {
     color: $gray-800;
     em {
-      color: $primary;
+      color: $info;
       font-style: normal;
     }
     @include media-breakpoint-down(sm) {
