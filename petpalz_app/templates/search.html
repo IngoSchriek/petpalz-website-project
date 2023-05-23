@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'layout.html' %} {% block main_content %}
+<div class="container" style="margin-top: 200px;">
+    <div class="row justify-content-start">
+    {% for product in products %}
+    <div class="col-md-2 col-4 p-3">
+        <a class="text-decoration-none" href="#">
+          <div class="product-card card border-0">
+            <img
+              class="px-1 pb-4"
+              src="../static/img/products/{{ product.img }}.jpg"
+              alt="Product"
+            />
+            <h3>
+              {{ product.title }}
+            </h3>
+            <div class="price-holder">
+              <div class="display-price">
+                <span class="price"> {{ product.prices[0] }} </span>
+                <span class="original-price"> {{ product.prices[1] }} </span>
+              </div>
+              <span class="times-price"> {{ product.prices[2] }} </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+    
+  </div>
+  {% endblock main_content %}
+</div>

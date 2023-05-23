@@ -23,15 +23,16 @@
           id="navbar__logo"
           class="navbar__logo text-md-end"
           href="{{ url_for('pages.home') }}"
-        >
+        > 
           <img class="w-100" src="../static/img/PET PALZ.png" alt="Pet Palz Logo"
         /></a>
       </div>
       <div class="col-search-bar col-lg-7 col-md-6">
-        <div class="d-flex form-inputs">
-          <input class="form-control" type="text" placeholder="Search any product..." />
-          <button class="button"><i class="fa fa-search"></i></button>
-        </div>
+       <!-- ////////// SEARCH BAR /////////// -->
+        <form class="d-flex form-inputs" action="/search" method="get">
+          <input class="form-control" type="text" name="query" placeholder="Search any product..." />
+          <button type="submit" class="button"><i class="fa fa-search"></i></button>
+        </form>
       </div>
       <div class="col-ruser-content col-lg-3 col-md-4">
         <a href="{{ url_for('pages.login') }}" class="user-account btn btn-light pe-4">
@@ -78,9 +79,9 @@
               onmouseover="darkenScreen()"
               onmouseout="normalizeScreen()"
             >
-              <a href="#" class="btn dropdown-btn px-3 py-2"> Dogs </a>
+              <a href="dog" class="btn dropdown-btn px-3 py-2"> Dogs </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="">Dog Foods</a></li>
+                <li><a class="dropdown-item" href="dog/food">Dog Food</a></li>
                 <li><a class="dropdown-item disabled">Apparel & Accessories</a></li>
                 <li><a class="dropdown-item disabled">Dog Toys</a></li>
                 <li><a class="dropdown-item disabled">Cleaning & Beauty</a></li>
@@ -94,9 +95,9 @@
               onmouseover="darkenScreen()"
               onmouseout="normalizeScreen()"
             >
-              <a href="#" class="btn drop dropdown-btn px-3 py-2"> Cats </a>
+              <a href="cat" class="btn drop dropdown-btn px-3 py-2"> Cats </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="">Cat food</a></li>
+                <li><a class="dropdown-item" href="cat/food">Cat Food</a></li>
                 <li><a class="dropdown-item disabled">Apparel & Accessories</a></li>
                 <li><a class="dropdown-item disabled">Cat Toys</a></li>
                 <li><a class="dropdown-item disabled">Cleaning & Beauty</a></li>

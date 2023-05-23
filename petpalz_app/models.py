@@ -6,11 +6,12 @@ from dataclasses import dataclass, field
 class Product:
     _id: str
     title: str
-    price: str
+    prices: list[str] = field(default_factory=list)
     rating: int = 0
-    specification: str
-    description: str 
-    video_link: str 
+    specification: str = None
+    description: str = None
+    img: str = None
+    keywords: list[str] = field(default_factory=list)
 
 
 @dataclass
