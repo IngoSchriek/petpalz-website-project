@@ -178,9 +178,10 @@
     .dropdown {
       &:hover {
         .dropdown-btn {
+          color: $black;
           background-color: $white;
           border-radius: 4px 4px 0 0;
-          border-bottom: 4px double $primary;
+          border-bottom: 4px double $black;
         }
         .dropdown-menu {
           display: block;

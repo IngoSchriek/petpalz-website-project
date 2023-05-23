@@ -1,1 +1,10 @@
 @use '../custom' as *;
+
+footer div div {
+    ul li a {
+        font-size: 0.875rem !important;
+        &:hover {
+            color: $gray-600 !important;
+        }
+    }
+}

@@ -36,7 +36,7 @@
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
   --bs-light: rgb(255, 61, 61);
-  --bs-dark: #b32727;
+  --bs-dark: #cc2a2a;
   --bs-primary-rgb: 255, 255, 255;
   --bs-secondary-rgb: 219, 44, 44;
   --bs-success-rgb: 25, 135, 84;
@@ -44,7 +44,7 @@
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
   --bs-light-rgb: 255, 61, 61;
-  --bs-dark-rgb: 179, 39, 39;
+  --bs-dark-rgb: 204, 42, 42;
   --bs-primary-text-emphasis: #666666;
   --bs-secondary-text-emphasis: #581212;
   --bs-success-text-emphasis: #0a3622;
@@ -2018,13 +2018,13 @@ progress {
 
 .table-dark {
   --bs-table-color: #fff;
-  --bs-table-bg: #b32727;
-  --bs-table-border-color: #bb3d3d;
-  --bs-table-striped-bg: #b73232;
+  --bs-table-bg: #cc2a2a;
+  --bs-table-border-color: #d13f3f;
+  --bs-table-striped-bg: #cf3535;
   --bs-table-striped-color: #fff;
-  --bs-table-active-bg: #bb3d3d;
+  --bs-table-active-bg: #d13f3f;
   --bs-table-active-color: #fff;
-  --bs-table-hover-bg: #b93737;
+  --bs-table-hover-bg: #d03a3a;
   --bs-table-hover-color: #fff;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -3070,19 +3070,19 @@ textarea.form-control-lg {
 
 .btn-dark {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #b32727;
-  --bs-btn-border-color: #b32727;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #be4747;
-  --bs-btn-hover-border-color: #bb3d3d;
-  --bs-btn-focus-shadow-rgb: 190, 71, 71;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #c25252;
-  --bs-btn-active-border-color: #bb3d3d;
+  --bs-btn-bg: #cc2a2a;
+  --bs-btn-border-color: #cc2a2a;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #d44a4a;
+  --bs-btn-hover-border-color: #d13f3f;
+  --bs-btn-focus-shadow-rgb: 212, 74, 74;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #d65555;
+  --bs-btn-active-border-color: #d13f3f;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #b32727;
-  --bs-btn-disabled-border-color: #b32727;
+  --bs-btn-disabled-bg: #cc2a2a;
+  --bs-btn-disabled-border-color: #cc2a2a;
 }
 
 .btn-outline-primary {
@@ -3205,19 +3205,19 @@ textarea.form-control-lg {
 }
 
 .btn-outline-dark {
-  --bs-btn-color: #b32727;
-  --bs-btn-border-color: #b32727;
+  --bs-btn-color: #cc2a2a;
+  --bs-btn-border-color: #cc2a2a;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #b32727;
-  --bs-btn-hover-border-color: #b32727;
-  --bs-btn-focus-shadow-rgb: 179, 39, 39;
+  --bs-btn-hover-bg: #cc2a2a;
+  --bs-btn-hover-border-color: #cc2a2a;
+  --bs-btn-focus-shadow-rgb: 204, 42, 42;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #b32727;
-  --bs-btn-active-border-color: #b32727;
+  --bs-btn-active-bg: #cc2a2a;
+  --bs-btn-active-border-color: #cc2a2a;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #b32727;
+  --bs-btn-disabled-color: #cc2a2a;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #b32727;
+  --bs-btn-disabled-border-color: #cc2a2a;
   --bs-gradient: none;
 }
 
@@ -6789,7 +6789,7 @@ textarea.form-control-lg {
 
 .text-bg-dark {
   color: #fff !important;
-  background-color: RGBA(179, 39, 39, var(--bs-bg-opacity, 1)) !important;
+  background-color: RGBA(204, 42, 42, var(--bs-bg-opacity, 1)) !important;
 }
 
 .link-primary {
@@ -6860,8 +6860,8 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-dark-rgb), var(--bs-link-underline-opacity, 1));
 }
 .link-dark:hover, .link-dark:focus {
-  color: RGBA(143, 31, 31, var(--bs-link-opacity, 1));
-  text-decoration-color: RGBA(143, 31, 31, var(--bs-link-underline-opacity, 1));
+  color: RGBA(163, 34, 34, var(--bs-link-opacity, 1));
+  text-decoration-color: RGBA(163, 34, 34, var(--bs-link-underline-opacity, 1));
 }
 
 .link-body-emphasis {
@@ -12004,9 +12004,10 @@ textarea.form-control-lg {
 
 @media (min-width: 768px) {
   .navbar-nav .dropdown:hover .dropdown-btn {
+    color: #000;
     background-color: #fff;
     border-radius: 4px 4px 0 0;
-    border-bottom: 4px double #fff;
+    border-bottom: 4px double #000;
   }
   .navbar-nav .dropdown:hover .dropdown-menu {
     display: block;
@@ -12188,6 +12189,37 @@ body {
   min-height: 1rem;
   font-size: 0.7rem;
   color: #495057;
+}
+
+h6 {
+  color: #193d6b;
+}
+@media (max-width: 575.98px) {
+  h6 {
+    font-size: 0.675rem !important;
+  }
+}
+@media (min-width: 576px) {
+  h6 {
+    font-size: 0.675rem !important;
+  }
+}
+@media (min-width: 768px) {
+  h6 {
+    font-size: 0.775rem !important;
+  }
+}
+@media (min-width: 992px) {
+  h6 {
+    font-size: 0.875rem !important;
+  }
+}
+
+footer div div ul li a {
+  font-size: 0.875rem !important;
+}
+footer div div ul li a:hover {
+  color: #6c757d !important;
 }
 
 /*# sourceMappingURL=style.css.map */
