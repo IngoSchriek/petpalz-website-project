@@ -181,7 +181,9 @@
           color: $black;
           background-color: $white;
           border-radius: 4px 4px 0 0;
-          border-bottom: 4px double $black;
+          text-decoration: underline;
+          text-decoration-color: $dark;
+          text-underline-offset: 10px;
         }
         .dropdown-menu {
           display: block;

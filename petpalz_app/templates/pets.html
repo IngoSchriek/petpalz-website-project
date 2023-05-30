@@ -1,10 +1,133 @@
 <!DOCTYPE html>
-{% extends 'layout.html' %}
-{% block main_content %}
-    <div class="container-md container-fluid">
-        <div class="row">
-            <div class="col-2"></div>
-            <div class="col-10"></div>
+{% extends 'layout.html' %} {% block main_content %}
+<div class="container-xxl container-fluid" style="padding-top: 150px">
+  <div class="row">
+    <nav class="col-6 justify-content-start" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Home</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Library</li>
+      </ol>
+    </nav>
+    <div class="col-6">
+      <div class="row justify-content-end align-items-center">
+        <div class="dropdown col">
+          <button
+            class="btn btn-primary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+          Sort By:
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item btn link-info" onclick="submitForm('1')">Price: Low to High</a></li>
+            <li><a class="dropdown-item btn link-info" onclick="submitForm('-1')">Price: High to Low</a></li>
+          </ul>
         </div>
+      </div>
     </div>
-{% endblock main_content %}
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <a
+        href="/{{ category }}{% if subcategory %}/{{ subcategory }}{% endif %}"
+        class="btn btn-outline-info"
+      >
+      Clear filters <i class="fa-regular fa-trash-can"></i>
+      </a>
+      {% if category == 'dog' %}
+      <div class="categories">
+        <h1>Categories</h1>
+        <div class="row">
+          <a href="/dog/food">Dog Food</a>
+          <a href="/dog/accessories">Apparel & Accessories</a>
+          <a href="">Dog Toys</a>
+          <a href="">Cleaning & Beauty</a>
+          <a href="">Medicines</a>
+          <a href="">Dog Houses</a>
+        </div>
+      </div>
+      {% endif %}{% if category == 'cat' %}
+      <div class="categories">
+        <h1>Categories</h1>
+        <div class="row">
+          <a href="/cat/food">Cat Food</a>
+          <a href="/cat/accessories">Apparel & Accessories</a>
+          <a href="">Cat Toys</a>
+          <a href="">Cleaning & Beauty</a>
+          <a href="">Medicines</a>
+          <a href="">Hygiene & Sandboxes</a>
+          <a href="">Cat Beds & Scratchers</a>
+        </div>
+      </div>
+      {% endif %}
+      <form
+        id="filter-form"
+        class="filter-form"
+        method="POST" 
+        action="/{{ category }}{% if subcategory %}/{{ subcategory }}{% endif %}"
+      >
+        {% for section in categories %}
+        <label class="display-5">{{ section }}</label>
+        <div class="form-group">
+          {% for categor in categories[section] %}
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="category-{{ section }}-{{ loop.index }}"
+              name="category-{{ section }}"
+              value="{{ categor }}"
+              {%
+              if
+              categor
+              in
+              selected_categories
+              %}checked{%
+              endif
+              %}
+            />
+            <label
+              class="form-check-label category-label"
+              for="category-{{ section }}-{{ loop.index }}"
+            >
+              {{ categor }}
+            </label>
+          </div>
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </form>
+    </div>
+    <div class="col-10">
+      <div class="row justify-content-start">
+        {% for product in products %}
+        <div class="col-md-2 col-4 p-3">
+          <a class="text-decoration-none" href="#">
+            <div class="product-card card border-0">
+              <img
+                class="px-1 pb-4"
+                src="/static/img/products/{{ product.img }}.jpg"
+                alt="Product"
+              />
+              <h3>{{ product.title }}</h3>
+              <div class="price-holder">
+                <div class="display-price">
+                  <span class="price"> ${{ product.prices[0] }} </span>
+                  <span class="original-price"> {{ '$' if product.prices[1] }}{{product.prices[1] }} </span>
+                </div>
+                <span class="times-price"> {{ product.prices[2] }} </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% endblock main_content %}
+  </div>
+</div>

@@ -5,7 +5,12 @@ $info: #0060B7;
 $dark: #cc2a2a;
 $light: rgb(255, 61, 61);
 // scss-docs-end theme-color-variables
-
 $input-placeholder-color: gray;
+$breadcrumb-divider-color: gray;
+$form-check-input-width:                  1.1em;
+$form-check-input-checked-bg-color:       $info;
+$form-check-input-border:                 2.5px solid gray;
+
+$breadcrumb-divider: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8'><path d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='#{$breadcrumb-divider-color}'/></svg>");
 // IMPORT BOOTSTRAP
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";

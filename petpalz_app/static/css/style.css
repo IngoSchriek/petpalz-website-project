@@ -2308,37 +2308,37 @@ textarea.form-control-lg {
 .form-check {
   display: block;
   min-height: 1.5rem;
-  padding-left: 1.5em;
+  padding-left: 1.6em;
   margin-bottom: 0.125rem;
 }
 .form-check .form-check-input {
   float: left;
-  margin-left: -1.5em;
+  margin-left: -1.6em;
 }
 
 .form-check-reverse {
-  padding-right: 1.5em;
+  padding-right: 1.6em;
   padding-left: 0;
   text-align: right;
 }
 .form-check-reverse .form-check-input {
   float: right;
-  margin-right: -1.5em;
+  margin-right: -1.6em;
   margin-left: 0;
 }
 
 .form-check-input {
   --bs-form-check-bg: var(--bs-body-bg);
-  width: 1em;
-  height: 1em;
-  margin-top: 0.25em;
+  width: 1.1em;
+  height: 1.1em;
+  margin-top: 0.2em;
   vertical-align: top;
   background-color: var(--bs-form-check-bg);
   background-image: var(--bs-form-check-bg-image);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  border: var(--bs-border-width) solid var(--bs-border-color);
+  border: 2.5px solid gray;
   appearance: none;
   print-color-adjust: exact;
 }
@@ -2357,8 +2357,8 @@ textarea.form-control-lg {
   box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
 }
 .form-check-input:checked {
-  background-color: #fff;
-  border-color: #fff;
+  background-color: #0060B7;
+  border-color: #0060B7;
 }
 .form-check-input:checked[type=checkbox] {
   --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
@@ -4615,7 +4615,7 @@ textarea.form-control-lg {
   --bs-breadcrumb-margin-bottom: 1rem;
   --bs-breadcrumb-bg: ;
   --bs-breadcrumb-border-radius: ;
-  --bs-breadcrumb-divider-color: var(--bs-secondary-color);
+  --bs-breadcrumb-divider-color: gray;
   --bs-breadcrumb-item-padding-x: 0.5rem;
   --bs-breadcrumb-item-active-color: var(--bs-secondary-color);
   display: flex;
@@ -4635,7 +4635,7 @@ textarea.form-control-lg {
   float: left;
   padding-right: var(--bs-breadcrumb-item-padding-x);
   color: var(--bs-breadcrumb-divider-color);
-  content: var(--bs-breadcrumb-divider, "/") /* rtl: var(--bs-breadcrumb-divider, "/") */;
+  content: var(--bs-breadcrumb-divider, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3e%3cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='gray'/%3e%3c/svg%3e")) /* rtl: var(--bs-breadcrumb-divider, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3e%3cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='gray'/%3e%3c/svg%3e")) */;
 }
 .breadcrumb-item.active {
   color: var(--bs-breadcrumb-item-active-color);
@@ -12007,7 +12007,9 @@ textarea.form-control-lg {
     color: #000;
     background-color: #fff;
     border-radius: 4px 4px 0 0;
-    border-bottom: 4px double #000;
+    text-decoration: underline;
+    text-decoration-color: #cc2a2a;
+    text-underline-offset: 10px;
   }
   .navbar-nav .dropdown:hover .dropdown-menu {
     display: block;
@@ -12220,6 +12222,19 @@ footer div div ul li a {
 }
 footer div div ul li a:hover {
   color: #6c757d !important;
+}
+
+.breadcrumb-item a:not(.active) {
+  color: #000;
+  text-decoration: none;
+}
+.breadcrumb-item a:not(.active):hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.categories a {
+  color: #495057 !important;
 }
 
 /*# sourceMappingURL=style.css.map */

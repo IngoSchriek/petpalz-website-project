@@ -24,7 +24,7 @@
           class="navbar__logo text-md-end"
           href="{{ url_for('pages.home') }}"
         > 
-          <img class="w-100" src="../static/img/PET PALZ.png" alt="Pet Palz Logo"
+          <img class="w-100" src="/static/img/PET PALZ.png" alt="Pet Palz Logo"
         /></a>
       </div>
       <div class="col-search-bar col-lg-7 col-md-6">
@@ -79,14 +79,14 @@
               onmouseover="darkenScreen()"
               onmouseout="normalizeScreen()"
             >
-              <a href="dog" class="btn dropdown-btn px-3 py-2"> Dogs </a>
+              <a href="/dog" class="btn dropdown-btn px-3 py-2"> Dogs </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="dog/food">Dog Food</a></li>
-                <li><a class="dropdown-item disabled">Apparel & Accessories</a></li>
+                <li><a class="dropdown-item" href="/dog/food">Dog Food</a></li>
+                <li><a class="dropdown-item" href="/dog/accessories">Apparel & Accessories</a></li>
                 <li><a class="dropdown-item disabled">Dog Toys</a></li>
                 <li><a class="dropdown-item disabled">Cleaning & Beauty</a></li>
                 <li><a class="dropdown-item disabled">Medicines</a></li>
-                <li><a class="dropdown-item disabled">Dog houses</a></li>
+                <li><a class="dropdown-item disabled">Dog Houses</a></li>
               </ul>
             </li>
 
@@ -95,10 +95,10 @@
               onmouseover="darkenScreen()"
               onmouseout="normalizeScreen()"
             >
-              <a href="cat" class="btn drop dropdown-btn px-3 py-2"> Cats </a>
+              <a href="/cat" class="btn drop dropdown-btn px-3 py-2"> Cats </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="cat/food">Cat Food</a></li>
-                <li><a class="dropdown-item disabled">Apparel & Accessories</a></li>
+                <li><a class="dropdown-item" href="/cat/food">Cat Food</a></li>
+                <li><a class="dropdown-item" href="/cat/accessories">Apparel & Accessories</a></li>
                 <li><a class="dropdown-item disabled">Cat Toys</a></li>
                 <li><a class="dropdown-item disabled">Cleaning & Beauty</a></li>
                 <li><a class="dropdown-item disabled">Medicines</a></li>
