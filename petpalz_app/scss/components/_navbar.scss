@@ -3,8 +3,8 @@
 ////////////////// MAIN NAVBAR START /////////////////////
 
 @include media-breakpoint-up(md) {
-
-  .navbar__logo, .navbar-brand {
+  .navbar__logo,
+  .navbar-brand {
     width: 150px;
   }
 
@@ -188,10 +188,7 @@
         .dropdown-menu {
           display: block;
           &-end {
-            position: absolute;
-            inset: 0px 0px auto auto;
-            margin: 0px;
-            transform: translate(0px, 40px);
+            right: 0;
           }
         }
       }
@@ -262,5 +259,43 @@
   .offcanvas-title {
     color: $gray-700;
     font-weight: 600;
+  }
+}
+
+.user-account__dropdown {
+  &:hover {
+    .user-account {
+      color: var(--bs-btn-hover-color);
+      background-color: var(--bs-btn-hover-bg);
+      border-color: var(--bs-btn-hover-border-color);
+    }
+    .dropdown-menu {
+      display: block; 
+    }
+  }
+
+  .dropdown-menu {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    min-width: 0;
+    width: 134px !important;
+    margin-top: -5px;
+    border-top: 0;
+    font-size: 0.875rem;
+  }
+}
+
+.text-account {
+  li {
+    margin-bottom: 20px;
+  }
+  a {
+    color: $info;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .disabled {
+    color: $gray-700;
   }
 }

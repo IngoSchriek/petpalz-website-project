@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title | default('PetPalz - Home') }}</title>
+    <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico" />
     <link rel="stylesheet" href="/static/css/style.css" />
     <link rel="stylesheet" href="/static/vendors/css/fontawesome.min.css" />
     <link rel="stylesheet" href="/static/vendors/css/all.min.css" />
@@ -19,17 +20,18 @@
   </head>
   <body>
     <!--//////////// NAVBAR START  ////////////-->
-    {% block header %} {{ navbar(session.get(email), session.get(language)) }} {% endblock
-    header %}
+    {% block header %} {{ navbar() if not search else navbar(search)}} {% endblock header
+    %}
     <!--//////////// NAVBAR END  ////////////-->
-    <main>{% block main_content %} {% endblock main_content %}</main>
+    <main style="padding-bottom: 80px;">{% block main_content %} {% endblock main_content %}</main>
 
     <!-- ////// FOOTER START ////// -->
-    <footer class="p-5 bg-dark">
-      {% block footer %} {{ footer() }} {% endblock footer %}
-    </footer>
+    {% block footer %}
+    <footer class="p-5 bg-dark">{{ footer() }}</footer>
+    {% endblock footer %}
 
     <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/jquery.zoom.min.js"></script>
     <script src="/static/js/main.js"></script>
   </body>
 </html>

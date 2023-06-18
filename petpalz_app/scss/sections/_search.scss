@@ -1,0 +1,6 @@
+@use '../custom' as *;
+
+.no-results {
+    font-weight: 600;
+    color: $gray-700;
+}

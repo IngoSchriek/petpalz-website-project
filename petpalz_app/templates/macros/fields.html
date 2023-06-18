@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% macro render_text_field(field) %}
+<div class="form-group mt-3">
+  {{ field.label(class_="fw-bold") }} {{ field(class_="form-control form-c")}} {%- for
+  error in field.errors %}
+  <div class="alert alert-danger mt-2" role="alert">
+    {{ error }}
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+  {% endfor %}
+</div>
+{% endmacro %}

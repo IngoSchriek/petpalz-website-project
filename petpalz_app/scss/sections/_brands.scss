@@ -1,1 +1,6 @@
 @use '../custom' as *;
+
+.home-container-subtitle {
+        font-size: 24px;
+        color: $gray-800 !important;
+}

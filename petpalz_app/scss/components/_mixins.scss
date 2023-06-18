@@ -1,0 +1,31 @@
+@use "../custom" as *;
+// Source mixin
+@mixin make-container($padding-r: $container-padding-x, $padding-l: $padding-r) {
+    width: 100%;
+    padding-right: $padding-r;
+    padding-left: $padding-l;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  // Usage
+  .custom-container {
+    @include make-container(50px);
+    @include media-breakpoint-down(md) {
+        @include make-container(30px);
+    }
+    @include media-breakpoint-up(xl) {
+        max-width: 1400px;
+    }
+  }
+
+    // Usage
+    .custom-cart-container {
+      @include make-container(30px, 50px);
+      @include media-breakpoint-down(md) {
+          @include make-container(10px);
+      }
+      @include media-breakpoint-up(xl) {
+          max-width: 1400px;
+      }
+    }

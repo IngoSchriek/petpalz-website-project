@@ -7,8 +7,7 @@ class Product:
     _id: str
     title: str
     prices: list = field(default_factory=list)
-    rating: int = 0
-    specification: str = None
+    rating: dict = field(default_factory=dict)
     description: str = None
     img: str = None
     keywords: list[str] = field(default_factory=list)
@@ -18,7 +17,8 @@ class Product:
 @dataclass
 class User:
     _id: str
+    username: str
     email: str
     password: str
     favorites: list[str] = field(default_factory=list)
-    cart: list[str] = field(default_factory=list)
+    cart: dict = field(default_factory=dict)

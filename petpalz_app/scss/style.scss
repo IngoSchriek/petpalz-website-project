@@ -3,7 +3,7 @@
 // IMPORT COMPONENTS
 @use "components/navbar";
 @use "components/typography";
-
+@use "components/mixins";
 // IMPORT SECTIONS
 @use "sections/banner";
 @use "sections/features";
@@ -12,3 +12,7 @@
 @use "sections/favorites";
 @use "sections/footer";
 @use "sections/pets";
+@use "sections/login";
+@use "sections/product";
+@use "sections/cart";
+@use "sections/search";

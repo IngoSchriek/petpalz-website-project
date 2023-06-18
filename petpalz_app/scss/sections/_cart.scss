@@ -1,0 +1,158 @@
+@use "../custom" as *;
+
+.cart {
+  padding-top: 150px;
+  button,
+  input {
+    padding: 0px;
+  }
+  input {
+    margin: 0 2px;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    display: none;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+    /* Firefox */
+  }
+
+  h1,
+  h2,
+  h5 {
+    color: $gray-800;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+  }
+  p {
+    font-size: 0.75rem;
+    margin: 0;
+  }
+  h5 {
+    font-size: 0.875rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  h3 {
+    font-size: 0.875rem;
+  }
+  .delivery-address {
+    p {
+      margin: 5px 5px;
+      color: $gray-700;
+      font-size: 0.85rem;
+    }
+  }
+
+  .delivery {
+    form {
+      p {
+        color: $info;
+        font-size: 13px;
+        font-weight: 700;
+      }
+      .form-inputs {
+        position: relative;
+
+        .form-control {
+          height: 45px;
+          padding-right: 2.5rem;
+          font-size: 13px;
+          font-weight: 500;
+          border: 1px solid #5f5f5f;
+          padding: 0.25rem 3.5rem 0.25rem 1rem;
+          &:focus {
+            box-shadow: none;
+            border: 1px solid #000;
+          }
+          &::placeholder {
+            color: $gray-500 !important;
+          }
+        }
+
+        .button {
+          position: absolute;
+          right: 16px;
+          width: 50px;
+          height: 30px;
+          padding-bottom: 2px;
+          top: 6px;
+          border: none;
+          color: $info;
+          font-size: 13px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  .discount-coupon {
+    form {
+      .form-control {
+        height: 45px;
+        padding-right: 2.5rem;
+        font-size: 13px;
+        font-weight: 500;
+        border: 1px solid #bebebe;
+        padding: 0.25rem 2rem 0.25rem 2rem;
+        &:focus {
+          box-shadow: none;
+          border: 1px solid $info;
+        }
+      }
+    }
+  }
+  .resume {
+    p {
+      font-size: 0.85rem;
+      font-weight: 400;
+      em {
+        font-weight: 600;
+        font-style: normal;
+      }
+    }
+    .unavailable {
+      color: $gray-700;
+      font-style: italic;
+    }
+    .green {
+      color: green;
+    }
+  }
+
+  .product-row {
+    h3 {
+      font-weight: 400;
+      font-size: 0.85rem;
+      color: $gray-800;
+    }
+  }
+  .price::before {
+    content: '$ ';
+  }
+  @include media-breakpoint-down(md) {
+    .product-row {
+      .row {
+        width: 100% !important;
+      }
+    }
+    .sections {
+      display: none !important;
+    }
+    .text-md-start {
+      h5 {
+      font-size: 1rem;
+      color: $info;
+      }
+    }
+  }
+}
+

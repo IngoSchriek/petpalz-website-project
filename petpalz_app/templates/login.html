@@ -1,10 +1,57 @@
 <!DOCTYPE html>
-{% extends 'layout.html' %} {% block header %}
+{% from "macros/fields.html" import render_text_field %} {% extends 'layout.html' %} {%
+block header %}
 <nav class="navbar bg-secondary">
   <div class="container justify-content-center justify-content-md-start">
-      <a class="navbar-brand" href="{{ url_for('pages.home') }}">
-        <img class="w-100" src="../static/img/PET PALZ.png" alt="Pet Palz Logo"
-      /></a>
-    </div>
+    <a class="navbar-brand" href="{{ url_for('pages.home') }}">
+      <img class="w-100" src="../static/img/PET PALZ.png" alt="Pet Palz Logo"
+    /></a>
+  </div>
 </nav>
-{% endblock header %}
+{% endblock header %} {% block main_content %}
+<div class="container-sm container-fluid">
+  <div class="row mt-5">
+    <h1 class="fs-2 fw-normal" style="color: rgb(65, 65, 65)">Log in or create account</h1>
+  </div>
+  <div class="row px-sm-5">
+    <div class="col-lg-6 col-12 px-md-5">
+      <h1 class="mt-5 text-info">Log in</h1>
+      <form name="login" method="post" novalidate class="mt-4">
+        {% with messages = get_flashed_messages(with_categories=true) %} {%- for category,
+        message in messages %}
+        <div class="alert alert-{{category}} mt-2" role="alert">
+          {{ message }}
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+        {% endfor %} {% endwith %} {{ form.hidden_tag() }} {{
+        render_text_field(form.email) }} {{ render_text_field(form.password) }}
+        <div class="mt-4">{{ form.submit(class_="btn btn-info w-100") }}</div>
+      </form>
+    </div>
+    <div class="col-lg-6 col-12 create-account px-md-5">
+      <h1 class="mt-5 text-info">Creating an account is quick, easy, and free!</h1>
+      <p class="mt-4">
+        With your Pet Palz account, you have access to exclusive offers, discounts,
+        tracking your orders, and much more!
+      </p>
+      <a class="btn btn-outline-info mt-3 w-100" href="/register">Create account</a>
+    </div>
+  </div>
+</div>
+{% endblock main_content %}
+{% block footer %}
+<footer class="text-center text-lg-start text-muted" style="background-color: rgba(224, 224, 224, 0.384); margin-top: 120px;">
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05); font-size: 0.825rem;">
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" style="font-size: 0.825rem;"" href="/">PetPalz.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+{% endblock footer %}

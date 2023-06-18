@@ -1,2 +1,385 @@
 <!DOCTYPE html>
-{% extends 'layout.html' %}
+{% extends 'layout.html' %} {% block main_content %}
+<div class="container product-content" style="padding-top: 144px">
+  <nav class="col-6 pt-1 pb-1" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="/">Pet Shop</a>
+      </li>
+
+      <li class="breadcrumb-item">
+        <a href="/{{ category }}">{{ category | capitalize }}</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        {{ "Apparel & " + subcategory | capitalize if subcategory == 'accessories' else
+        subcategory | capitalize }}
+      </li>
+    </ol>
+  </nav>
+  <div class="row">
+    <div class="col-md-6">
+      <figure
+        class="img-fluid zoom"
+        onmousemove="zoom(event)"
+        style="background-image: url(/static/img/products/{{product.img}}.jpg)"
+      >
+        <img src="/static/img/products/{{ product.img }}.jpg" alt="{{ subcategory }}" />
+      </figure>
+    </div>
+    <div class="col-md-6 product-info">
+      <h1>{{ product.title}}</h1>
+      <h6>{{ product.filters[2]}}</h6>
+      <div class="rate-section text-nowrap">
+        <div class="rating">
+          <p>{{ average_rating }}</p>
+          <div class="product__rating">
+            {% for i in range(5) %} {% set order = ((5 - i) | string) %}
+            <a
+              class="rating__link star--filled {{ 'rating__link' + order }} {{ (' star--notfilled ' if average_rating < (5 - i) else '') }}"
+              href="{{ url_for('pages.rate_product', p=product.title, rating=5-i) }}"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="star"
+                viewbox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                />
+              </svg>
+            </a>
+            {% endfor %}
+          </div>
+          <p>({{ rates_count }} ratings)</p>
+        </div>
+        <h6>
+          {{"You haven't rated yet!" if not product.rating[session["user_id"]] else "You
+          already rated!"}}
+        </h6>
+      </div>
+      <div class="price-section mt-5">
+        <div class="price-holder">
+          <div class="display-price">
+            <h1 class="price">${{ product.prices[0]}}</h1>
+            <h2 class="original-price">${{ product.prices[1] }}</h2>
+          </div>
+          <span class="times-price">{{ product.prices[2] }}</span>
+        </div>
+      </div>
+        <form class="row cart-add mt-5 pt-5" method="post">
+          <div class="form-group col text-nowrap ms-1 mb-2">
+            <button class="btn btn-info" type="button" onclick="decreaseValue()">
+              -
+            </button>
+            <input
+            id="valueInput"
+            class="btn btn-info"
+            type="number"
+            name="value"
+            value="1"
+            pattern="[0-9]*"
+            min="1"
+            max="100"
+            step="1"
+            oninput="handleInput(this)"
+            autocomplete="off"
+            onblur="handleBlur(this)"
+          />
+            <button class="btn btn-info" type="button" onclick="increaseValue()">
+              +
+            </button>
+          </div>
+          <input type="hidden" name="decrease" id="decreaseBtn" />
+          <input type="hidden" name="increase" id="increaseBtn" />
+          <button class="btn btn-success ms-md-4 mx-3 col text-nowrap" type="submit">Add to cart</button>
+        </form>
+    </div>
+  </div>
+  <div class="container-fluid mt-5 p-0">
+    <div class="row text-primary text-start">
+      <div class="col-6">
+        <h3 class="ms-1 fw-bold p-1">Recommended Products</h3>
+      </div>
+      <div class="col-6 text-end">
+        <button
+          class="btn justify-content-center"
+          type="button"
+          data-bs-target="#carousel2Autoplaying"
+          data-bs-slide="prev"
+        >
+          <i class="fa-solid fa-circle-arrow-left fs-1 text-info"></i>
+        </button>
+        <button
+          class="btn justify-content-center"
+          type="button"
+          data-bs-target="#carousel2Autoplaying"
+          data-bs-slide="next"
+        >
+          <i class="fa-solid fa-circle-arrow-right fs-1 text-info"></i>
+        </button>
+      </div>
+    </div>
+    <div
+      id="carousel2Autoplaying"
+      class="carousel carousel-dark slide mb-5 mt-2"
+      data-bs-ride="carousel"
+    >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row justify-content-between">
+          <div class="col-md-2 col-sm-4 col-6 p-3">
+            <a class="text-decoration-none" href="{{ url_for('pages.product', p='Royal Canin Breed Health Nutrition Labrador Retriever Adult Dry Dog Food, 30 lbs. Bag')}}">
+              <div class="product-card card border-0">
+                <img
+                  class="px-1 pb-4"
+                  src="/static/img/products/DogFood1.jpg"
+                  alt="Product"
+                />
+                <h3>
+                  Royal Canin Breed Health Nutrition Labrador Retriever Adult Dry Dog Food, 30 lbs. Bag
+                </h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $78.99 </span>
+                    <span class="original-price"> $98.99 </span>
+                  </div>
+                  <span class="times-price">or 6 times of $20.00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-sm-4 col-6 p-3">
+            <a class="text-decoration-none" href="{{ url_for('pages.product', p='Purina ONE Dry Dog Food Lamb and Rice Formula - 16.5 lb. Bag')}}">
+              <div class="product-card card border-0">
+                <img
+                  class="px-1 pb-4"
+                  src="/static/img/products/DogFood2.jpg"
+                  alt="Product"
+                />
+                <h3>Purina ONE Dry Dog Food Lamb and Rice Formula - 16.5 lb. Bag</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $32.50 </span>
+                    <span class="original-price"> $55.00 </span>
+                  </div>
+                  <span class="times-price">or 2 times of $22.80</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-sm-4 d-sm-block d-none p-3">
+            <a class="text-decoration-none" href="{{ url_for('pages.product', p='Purina Moist & Meaty Wet Dog Food, Chopped Burger - 36 ct. Pouch')}}">
+              <div class="product-card card border-0">
+                <img
+                  class="px-1 pb-4"
+                  src="/static/img/products/DogFood3.jpg"
+                  alt="Product"
+                />
+                <h3>Purina Moist & Meaty Wet Dog Food, Chopped Burger - 36 ct. Pouch</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $20.48 </span>
+                    <span class="original-price"> $28.78 </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 d-md-block d-none p-3">
+            <a class="text-decoration-none" href="{{ url_for('pages.product', p='Purina Fancy Feast Grilled Wet Cat Food Seafood Collection in Wet Cat Food Variety Pack - (24) 3 oz. Cans')}}">
+              <div class="product-card card border-0">
+                <img
+                  class="px-1 pb-4"
+                  src="/static/img/products/CatFood1.jpg"
+                  alt="Product"
+                />
+                <h3>
+                  Purina Fancy Feast Grilled Wet Cat Food Seafood Collection in Wet Cat Food Variety Pack - (24) 3 oz. Cans
+                </h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $24.50 </span>
+                    <span class="original-price"> $30.00 </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 d-md-block d-none p-3">
+            <a class="text-decoration-none" href="{{ url_for('pages.product', p='Purina Friskies Gravy Wet Cat Food Variety Pack, Poultry Shreds, Meaty Bits & Prime Filets - (32) 5.5 oz. Cans')}}">
+              <div class="product-card card border-0">
+                <img
+                  class="px-1 pb-4"
+                  src="/static/img/products/CatFood2.jpg"
+                  alt="Product"
+                />
+                <h3>
+                  Purina Friskies Gravy Wet Cat Food Variety Pack, Poultry Shreds, Meaty Bits & Prime Filets - (32) 5.5 oz. Cans
+                </h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $27.58 </span>
+                    <span class="original-price"> $33.48 </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="row justify-content-between">
+          <div class="col-md-2 col-sm-4 col-6 p-3">
+            <a class="text-decoration-none" href="{{ url_for('pages.product', p='Royal Canin Breed Health Nutrition Labrador Retriever Adult Dry Dog Food, 30 lbs. Bag')}}">
+              <div class="product-card card border-0">
+                <img
+                  class="px-1 pb-4"
+                  src="/static/img/products/DogFood1.jpg"
+                  alt="Product"
+                />
+                <h3>
+                  Royal Canin Breed Health Nutrition Labrador Retriever Adult Dry Dog Food, 30 lbs. Bag
+                </h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $78.99 </span>
+                    <span class="original-price"> $98.99 </span>
+                  </div>
+                  <span class="times-price">or 6 times of $20.00</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-sm-4 col-6 p-3">
+            <a class="text-decoration-none" href="{{ url_for('pages.product', p='Purina ONE Dry Dog Food Lamb and Rice Formula - 16.5 lb. Bag')}}">
+              <div class="product-card card border-0">
+                <img
+                  class="px-1 pb-4"
+                  src="/static/img/products/DogFood2.jpg"
+                  alt="Product"
+                />
+                <h3>Purina ONE Dry Dog Food Lamb and Rice Formula - 16.5 lb. Bag</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $32.50 </span>
+                    <span class="original-price"> $55.00 </span>
+                  </div>
+                  <span class="times-price">or 2 times of $22.80</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-sm-4 d-sm-block d-none p-3">
+            <a class="text-decoration-none" href="{{ url_for('pages.product', p='Purina Moist & Meaty Wet Dog Food, Chopped Burger - 36 ct. Pouch')}}">
+              <div class="product-card card border-0">
+                <img
+                  class="px-1 pb-4"
+                  src="/static/img/products/DogFood3.jpg"
+                  alt="Product"
+                />
+                <h3>Purina Moist & Meaty Wet Dog Food, Chopped Burger - 36 ct. Pouch</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $20.48 </span>
+                    <span class="original-price"> $28.78 </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 d-md-block d-none p-3">
+            <a class="text-decoration-none" href="{{ url_for('pages.product', p='Purina Fancy Feast Grilled Wet Cat Food Seafood Collection in Wet Cat Food Variety Pack - (24) 3 oz. Cans')}}">
+              <div class="product-card card border-0">
+                <img
+                  class="px-1 pb-4"
+                  src="/static/img/products/CatFood1.jpg"
+                  alt="Product"
+                />
+                <h3>
+                  Purina Fancy Feast Grilled Wet Cat Food Seafood Collection in Wet Cat Food Variety Pack - (24) 3 oz. Cans
+                </h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $24.50 </span>
+                    <span class="original-price"> $30.00 </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 d-md-block d-none p-3">
+            <a class="text-decoration-none" href="{{ url_for('pages.product', p='Purina Friskies Gravy Wet Cat Food Variety Pack, Poultry Shreds, Meaty Bits & Prime Filets - (32) 5.5 oz. Cans')}}">
+              <div class="product-card card border-0">
+                <img
+                  class="px-1 pb-4"
+                  src="/static/img/products/CatFood2.jpg"
+                  alt="Product"
+                />
+                <h3>
+                  Purina Friskies Gravy Wet Cat Food Variety Pack, Poultry Shreds, Meaty Bits & Prime Filets - (32) 5.5 oz. Cans
+                </h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> $27.58 </span>
+                    <span class="original-price"> $33.48 </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="container product-description">
+    <h1>Description</h1>
+    <p>{{ product.description }}</p>
+  </div>
+  <div class="container product-spec mt-5">
+    <h1>Specification</h1>
+    <table class="table">
+      <tbody>
+        <tr>
+          <th scope="row">Stage</th>
+          {% if 'Adult' in product.filters %}
+          <td>Adult</td>
+          {% endif %}
+          {% if 'Puppy' in product.filters %}
+          <td>Puppy</td>
+          {% endif %}
+          {% if 'Senior' in product.filters %}
+          <td>Senior</td>
+          {% endif %}
+        </tr>
+        <tr>
+          <th scope="row">Brand</th>
+          <td>{{ product.filters[2] }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Pet</th>
+          <td>{{ product.filters[0] | capitalize }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Breed Size</th>
+          {% if 'Large Breeds' in product.filters %}
+          <td>Large</td>
+          {% endif %}
+          {% if 'Medium Breeds' in product.filters %}
+          <td>Medium</td>
+          {% endif %}
+          {% if 'Small Breeds' in product.filters %}
+          <td>Small</td>
+          {% endif %}
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock main_content %}

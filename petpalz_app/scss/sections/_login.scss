@@ -1,0 +1,50 @@
+@use "../custom" as *;
+
+.create-account {
+  h1 {
+    font-weight: 400;
+    font-size: 1.875rem;
+  }
+
+  p {
+    color: $gray-700;
+    font-size: 1rem;
+  }
+
+  &__title {
+    color: $gray-700;
+  }
+}
+
+.form-group {
+    label {
+        font-size: 0.775rem;
+    }
+}
+
+.alert {
+    font-size: 0.775rem;
+    padding: 7px 30px 7px 30px;
+    .btn-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        padding: 10px;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+.form-c {
+    border: 1px solid $gray-400;
+    &:focus {
+        border: 1px solid $black;
+    }
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    &:hover:not(:focus) {
+        border: 1px solid $gray-500;
+    }
+}

@@ -161,25 +161,25 @@
 <!-- ///////////////////////////////////////////////////// -->
 <!-- /////////////////// PRODUCTS //////////////////////// -->
 <!-- ///////////////////////////////////////////////////// -->
-<div class="container-md container-fluid my-5">
+<div class="custom-container pt-5 my-5 home-container">
   <div class="row text-primary text-start">
-    <div class="col-6"><h3 class="ms-1 fw-bold p-1 text-black">Best sellers</h3></div>
-    <div class="col-6 text-end">
+    <div class="col-8"><h3 class="ms-1 fw-bold p-1 home-container-subtitle">Best Sellers</h3></div>
+    <div class="col-4 pt-1 text-end">
       <button
-        class="btn justify-content-center"
+        class="btn justify-content-center p-0"
         type="button"
         data-bs-target="#carousel2Autoplaying"
         data-bs-slide="prev"
       >
-        <i class="fa-solid fa-circle-arrow-left fs-1 text-info"></i>
+        <i class="fa-solid fa-circle-arrow-left fs-2 text-info"></i>
       </button>
       <button
-        class="btn justify-content-center"
+        class="btn justify-content-center p-0 ms-2"
         type="button"
         data-bs-target="#carousel2Autoplaying"
         data-bs-slide="next"
       >
-        <i class="fa-solid fa-circle-arrow-right fs-1 text-info"></i>
+        <i class="fa-solid fa-circle-arrow-right fs-2 text-info"></i>
       </button>
     </div>
   </div>
@@ -191,8 +191,8 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div class="row justify-content-between">
-          <div class="col-md-2 col-4 p-3">
-            <a class="text-decoration-none" href="#">
+          <div class="col-md-2 col-sm-4 col-6 p-3">
+            <a class="text-decoration-none" href="{{ url_for('pages.product', p='Royal Canin Breed Health Nutrition Labrador Retriever Adult Dry Dog Food, 30 lbs. Bag')}}">
               <div class="product-card card border-0">
                 <img
                   class="px-1 pb-4"
@@ -200,21 +200,20 @@
                   alt="Product"
                 />
                 <h3>
-                  Royal Canin Breed Health Nutrition Labrador Retriever Adult Dry Dog
-                  Food, 30 lbs. Bag
+                  Royal Canin Breed Health Nutrition Labrador Retriever Adult Dry Dog Food, 30 lbs. Bag
                 </h3>
                 <div class="price-holder">
                   <div class="display-price">
-                    <span class="price"> $78,99 </span>
-                    <span class="original-price"> $98,99 </span>
+                    <span class="price"> $78.99 </span>
+                    <span class="original-price"> $98.99 </span>
                   </div>
-                  <span class="times-price">or 6 times of $20,00</span>
+                  <span class="times-price">or 6 times of $20.00</span>
                 </div>
               </div>
             </a>
           </div>
-          <div class="col-md-2 col-4 p-3">
-            <a class="text-decoration-none" href="#">
+          <div class="col-md-2 col-sm-4 col-6 p-3">
+            <a class="text-decoration-none" href="{{ url_for('pages.product', p='Purina ONE Dry Dog Food Lamb and Rice Formula - 16.5 lb. Bag')}}">
               <div class="product-card card border-0">
                 <img
                   class="px-1 pb-4"
@@ -224,16 +223,16 @@
                 <h3>Purina ONE Dry Dog Food Lamb and Rice Formula - 16.5 lb. Bag</h3>
                 <div class="price-holder">
                   <div class="display-price">
-                    <span class="price"> $32,50 </span>
-                    <span class="original-price"> $55,00 </span>
+                    <span class="price"> $32.50 </span>
+                    <span class="original-price"> $55.00 </span>
                   </div>
-                  <span class="times-price">or 2 times of $22,80</span>
+                  <span class="times-price">or 2 times of $22.80</span>
                 </div>
               </div>
             </a>
           </div>
-          <div class="col-md-2 col-4 p-3">
-            <a class="text-decoration-none" href="#">
+          <div class="col-md-2 col-sm-4 d-sm-block d-none p-3">
+            <a class="text-decoration-none" href="{{ url_for('pages.product', p='Purina Moist & Meaty Wet Dog Food, Chopped Burger - 36 ct. Pouch')}}">
               <div class="product-card card border-0">
                 <img
                   class="px-1 pb-4"
@@ -243,15 +242,15 @@
                 <h3>Purina Moist & Meaty Wet Dog Food, Chopped Burger - 36 ct. Pouch</h3>
                 <div class="price-holder">
                   <div class="display-price">
-                    <span class="price"> $20,48 </span>
-                    <span class="original-price"> $28,78 </span>
+                    <span class="price"> $20.48 </span>
+                    <span class="original-price"> $28.78 </span>
                   </div>
                 </div>
               </div>
             </a>
           </div>
           <div class="col-md-2 d-md-block d-none p-3">
-            <a class="text-decoration-none" href="#">
+            <a class="text-decoration-none" href="{{ url_for('pages.product', p='Purina Fancy Feast Grilled Wet Cat Food Seafood Collection in Wet Cat Food Variety Pack - (24) 3 oz. Cans')}}">
               <div class="product-card card border-0">
                 <img
                   class="px-1 pb-4"
@@ -263,15 +262,15 @@
                 </h3>
                 <div class="price-holder">
                   <div class="display-price">
-                    <span class="price"> $24,50 </span>
-                    <span class="original-price"> $30,00 </span>
+                    <span class="price"> $24.50 </span>
+                    <span class="original-price"> $30.00 </span>
                   </div>
                 </div>
               </div>
             </a>
           </div>
           <div class="col-md-2 d-md-block d-none p-3">
-            <a class="text-decoration-none" href="#">
+            <a class="text-decoration-none" href="{{ url_for('pages.product', p='Purina Friskies Gravy Wet Cat Food Variety Pack, Poultry Shreds, Meaty Bits & Prime Filets - (32) 5.5 oz. Cans')}}">
               <div class="product-card card border-0">
                 <img
                   class="px-1 pb-4"
@@ -284,7 +283,7 @@
                 <div class="price-holder">
                   <div class="display-price">
                     <span class="price"> $27.58 </span>
-                    <span class="original-price"> $33,48 </span>
+                    <span class="original-price"> $33.48 </span>
                   </div>
                 </div>
               </div>
@@ -295,8 +294,8 @@
 
       <div class="carousel-item">
         <div class="row justify-content-between">
-          <div class="col-md-2 col-4 p-3">
-            <a class="text-decoration-none" href="#">
+          <div class="col-md-2 col-sm-4 col-6 p-3">
+            <a class="text-decoration-none" href="{{ url_for('pages.product', p='Royal Canin Breed Health Nutrition Labrador Retriever Adult Dry Dog Food, 30 lbs. Bag')}}">
               <div class="product-card card border-0">
                 <img
                   class="px-1 pb-4"
@@ -304,21 +303,20 @@
                   alt="Product"
                 />
                 <h3>
-                  Royal Canin Breed Health Nutrition Labrador Retriever Adult Dry Dog
-                  Food, 30 lbs. Bag
+                  Royal Canin Breed Health Nutrition Labrador Retriever Adult Dry Dog Food, 30 lbs. Bag
                 </h3>
                 <div class="price-holder">
                   <div class="display-price">
-                    <span class="price"> $78,99 </span>
-                    <span class="original-price"> $98,99 </span>
+                    <span class="price"> $78.99 </span>
+                    <span class="original-price"> $98.99 </span>
                   </div>
-                  <span class="times-price">or 6 times of $20,00</span>
+                  <span class="times-price">or 6 times of $20.00</span>
                 </div>
               </div>
             </a>
           </div>
-          <div class="col-md-2 col-4 p-3">
-            <a class="text-decoration-none" href="#">
+          <div class="col-md-2 col-sm-4 col-6 p-3">
+            <a class="text-decoration-none" href="{{ url_for('pages.product', p='Purina ONE Dry Dog Food Lamb and Rice Formula - 16.5 lb. Bag')}}">
               <div class="product-card card border-0">
                 <img
                   class="px-1 pb-4"
@@ -328,16 +326,16 @@
                 <h3>Purina ONE Dry Dog Food Lamb and Rice Formula - 16.5 lb. Bag</h3>
                 <div class="price-holder">
                   <div class="display-price">
-                    <span class="price"> $32,50 </span>
-                    <span class="original-price"> $55,00 </span>
+                    <span class="price"> $32.50 </span>
+                    <span class="original-price"> $55.00 </span>
                   </div>
-                  <span class="times-price">or 2 times of $22,80</span>
+                  <span class="times-price">or 2 times of $22.80</span>
                 </div>
               </div>
             </a>
           </div>
-          <div class="col-md-2 col-4 p-3">
-            <a class="text-decoration-none" href="#">
+          <div class="col-md-2 col-sm-4 d-sm-block d-none p-3">
+            <a class="text-decoration-none" href="{{ url_for('pages.product', p='Purina Moist & Meaty Wet Dog Food, Chopped Burger - 36 ct. Pouch')}}">
               <div class="product-card card border-0">
                 <img
                   class="px-1 pb-4"
@@ -347,15 +345,15 @@
                 <h3>Purina Moist & Meaty Wet Dog Food, Chopped Burger - 36 ct. Pouch</h3>
                 <div class="price-holder">
                   <div class="display-price">
-                    <span class="price"> $20,48 </span>
-                    <span class="original-price"> $28,78 </span>
+                    <span class="price"> $20.48 </span>
+                    <span class="original-price"> $28.78 </span>
                   </div>
                 </div>
               </div>
             </a>
           </div>
           <div class="col-md-2 d-md-block d-none p-3">
-            <a class="text-decoration-none" href="#">
+            <a class="text-decoration-none" href="{{ url_for('pages.product', p='Purina Fancy Feast Grilled Wet Cat Food Seafood Collection in Wet Cat Food Variety Pack - (24) 3 oz. Cans')}}">
               <div class="product-card card border-0">
                 <img
                   class="px-1 pb-4"
@@ -363,20 +361,19 @@
                   alt="Product"
                 />
                 <h3>
-                  Purina Fancy Feast Grilled Wet Cat Food Seafood Collection in Wet Cat
-                  Food Variety Pack - (24) 3 oz. Cans
+                  Purina Fancy Feast Grilled Wet Cat Food Seafood Collection in Wet Cat Food Variety Pack - (24) 3 oz. Cans
                 </h3>
                 <div class="price-holder">
                   <div class="display-price">
-                    <span class="price"> $24,50 </span>
-                    <span class="original-price"> $30,00 </span>
+                    <span class="price"> $24.50 </span>
+                    <span class="original-price"> $30.00 </span>
                   </div>
                 </div>
               </div>
             </a>
           </div>
           <div class="col-md-2 d-md-block d-none p-3">
-            <a class="text-decoration-none" href="#">
+            <a class="text-decoration-none" href="{{ url_for('pages.product', p='Purina Friskies Gravy Wet Cat Food Variety Pack, Poultry Shreds, Meaty Bits & Prime Filets - (32) 5.5 oz. Cans')}}">
               <div class="product-card card border-0">
                 <img
                   class="px-1 pb-4"
@@ -384,13 +381,12 @@
                   alt="Product"
                 />
                 <h3>
-                  Purina Friskies Gravy Wet Cat Food Variety Pack, Poultry Shreds, Meaty
-                  Bits & Prime Filets - (32) 5.5 oz. Cans
+                  Purina Friskies Gravy Wet Cat Food Variety Pack, Poultry Shreds, Meaty Bits & Prime Filets - (32) 5.5 oz. Cans
                 </h3>
                 <div class="price-holder">
                   <div class="display-price">
                     <span class="price"> $27.58 </span>
-                    <span class="original-price"> $33,48 </span>
+                    <span class="original-price"> $33.48 </span>
                   </div>
                 </div>
               </div>
@@ -402,11 +398,97 @@
   </div>
 </div>
 <!-- ///////////////////////////////////////////////////// -->
+<!-- //////////////// CAT FAVORITES ////////////////////// -->
+<!-- ///////////////////////////////////////////////////// -->
+<div class="custom-container py-3 my-5 home-container">
+  <div class="row ms-1 text-primary text-start">
+    <h3 class="col-10 fw-bold p-1 home-container-subtitle">Cat Favorites</h3>
+  </div>
+  <div class="row">
+    <div class="col-md-3 px-md-4 pb-3 col-6 text-center">
+      <a class="text-center border btn" href="/cat/food">
+        <img class="img-fluid" src="/static/img/favorites/CatFood.jpg" alt="CatFood" />
+        <h6 class="text-center">Cat Food</h6>
+      </a>
+    </div>
+    <div class="col-md-3 px-md-4 pb-3 col-6 text-center">
+      <a class="text-center border btn" href="/cat/accessories">
+        <img
+          class="img-fluid"
+          src="/static/img/favorites/CatAccessories.png"
+          alt="CatAccessories"
+        />
+        <h6 class="text-center">Accessories</h6>
+      </a>
+    </div>
+    <div class="col-md-3 px-md-4 pb-3 col-6 text-center">
+      <a class="text-center border btn" href="#">
+        <img class="img-fluid" src="/static/img/favorites/CatToys.jpg" alt="CatToys" />
+        <h6 class="text-center">Cat Toys</h6>
+      </a>
+    </div>
+    <div class="col-md-3 px-md-4 pb-3 col-6 text-center">
+      <a class="text-center border btn" href="#">
+        <img
+          class="img-fluid"
+          src="/static/img/favorites/CatCleaning.jpeg"
+          alt="CatCleaning"
+        />
+        <h6 class="text-center">Cleaning</h6>
+      </a>
+    </div>
+
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////// -->
+<!-- //////////////// DOG FAVORITES ////////////////////// -->
+<!-- ///////////////////////////////////////////////////// -->
+<div class="custom-container pt-3 pb-5 my-5 home-container">
+  <div class="row ms-1 text-primary text-start">
+    <h3 class="col-10 fw-bold p-1 home-container-subtitle">Dog Favorites</h3>
+  </div>
+  <div class="row">
+    <div class="col-md-3 px-md-4 pb-3 col-6 text-center">
+      <a class="text-center border btn" href="/dog/food">
+        <img class="img-fluid" src="/static/img/favorites/DogFood.jpg" alt="DogFood" />
+        <h6 class="text-center">Dog Food</h6>
+      </a>
+    </div>
+    <div class="col-md-3 px-md-4 pb-3 col-6 text-center">
+      <a class="text-center border btn" href="/dog/accessories">
+        <img
+          class="img-fluid"
+          src="/static/img/favorites/DogAccessories.jpg"
+          alt="DogAccessories"
+        />
+        <h6 class="text-center">Accessories</h6>
+      </a>
+    </div>
+    <div class="col-md-3 px-md-4 pb-3 col-6 text-center">
+      <a class="text-center border btn" href="#">
+        <img class="img-fluid" src="/static/img/favorites/DogToys.jpg" alt="DogToys" />
+        <h6 class="text-center">Dog Toys</h6>
+      </a>
+    </div>
+    <div class="col-md-3 px-md-4 pb-3 col-6 text-center">
+      <a class="text-center border btn" href="#">
+        <img
+          class="img-fluid"
+          src="/static/img/favorites/DogCleaning.jpg"
+          alt="DogCleaning"
+        />
+        <h6 class="text-center">Cleaning</h6>
+      </a>
+    </div>
+
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////// -->
 <!-- ///////////////// TOP BRANDS //////////////////////// -->
 <!-- ///////////////////////////////////////////////////// -->
-<div class="container-md container-fluid my-5">
-  <div class="row ms-1 text-primary text-start">
-    <h3 class="col-10 fw-bold p-1 text-black">Top Brands</h3>
+<div class="custom-container pt-2 pb-5 my-5 home-container">
+  <div class="home-row row ms-1 text-primary text-start">
+    <h3 class="col-10 fw-bold p-1 home-container-subtitle">Top Brands</h3>
   </div>
   <div class="row">
     <div class="col-md-2 col-4 p-3">
@@ -438,90 +520,6 @@
       <div class="card p-3 border-0">
         <img class="" src="/static/img/brands/BlueBrand.png" alt="Brand" />
       </div>
-    </div>
-  </div>
-</div>
-<!-- ///////////////////////////////////////////////////// -->
-<!-- //////////////// CAT FAVORITES ////////////////////// -->
-<!-- ///////////////////////////////////////////////////// -->
-<div class="container-md container-fluid my-5">
-  <div class="row ms-1 text-primary text-start">
-    <h3 class="col-10 fw-bold p-1 text-black">Cat Favorites</h3>
-  </div>
-  <div class="row">
-    <div class="col-md-3 col-6 text-center">
-      <a class="text-center border btn" href="/cat/food">
-        <img class="img-fluid" src="/static/img/favorites/CatFood.jpg" alt="CatFood" />
-        <h6 class="text-center">Cat Food</h6>
-      </a>
-    </div>
-    <div class="col-md-3 col-6 text-center">
-      <a class="text-center border btn" href="#">
-        <img class="img-fluid" src="/static/img/favorites/CatToys.jpg" alt="CatToys" />
-        <h6 class="text-center">Cat Toys</h6>
-      </a>
-    </div>
-    <div class="col-md-3 col-6 text-center">
-      <a class="text-center border btn" href="#">
-        <img
-          class="img-fluid"
-          src="/static/img/favorites/CatCleaning.jpeg"
-          alt="CatCleaning"
-        />
-        <h6 class="text-center">Cleaning</h6>
-      </a>
-    </div>
-    <div class="col-md-3 col-6 text-center">
-      <a class="text-center border btn" href="/cat/accessories">
-        <img
-          class="img-fluid"
-          src="/static/img/favorites/CatAccessories.png"
-          alt="CatAccessories"
-        />
-        <h6 class="text-center">Accessories</h6>
-      </a>
-    </div>
-  </div>
-</div>
-<!-- ///////////////////////////////////////////////////// -->
-<!-- //////////////// DOG FAVORITES ////////////////////// -->
-<!-- ///////////////////////////////////////////////////// -->
-<div class="container-md container-fluid my-5">
-  <div class="row ms-1 text-primary text-start">
-    <h3 class="col-10 fw-bold p-1 text-black">Dog Favorites</h3>
-  </div>
-  <div class="row">
-    <div class="col-md-3 col-6 text-center">
-      <a class="text-center border btn" href="/dog/food">
-        <img class="img-fluid" src="/static/img/favorites/DogFood.jpg" alt="DogFood" />
-        <h6 class="text-center">Dog Food</h6>
-      </a>
-    </div>
-    <div class="col-md-3 col-6 text-center">
-      <a class="text-center border btn" href="#">
-        <img class="img-fluid" src="/static/img/favorites/DogToys.jpg" alt="DogToys" />
-        <h6 class="text-center">Dog Toys</h6>
-      </a>
-    </div>
-    <div class="col-md-3 col-6 text-center">
-      <a class="text-center border btn" href="#">
-        <img
-          class="img-fluid"
-          src="/static/img/favorites/DogCleaning.jpg"
-          alt="DogCleaning"
-        />
-        <h6 class="text-center">Cleaning</h6>
-      </a>
-    </div>
-    <div class="col-md-3 col-6 text-center">
-      <a class="text-center border btn" href="/dog/accessories">
-        <img
-          class="img-fluid"
-          src="/static/img/favorites/DogAccessories.jpg"
-          alt="DogAccessories"
-        />
-        <h6 class="text-center">Accessories</h6>
-      </a>
     </div>
   </div>
 </div>

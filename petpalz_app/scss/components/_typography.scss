@@ -1,6 +1,11 @@
 @use "../custom" as *;
 
 
+*::placeholder {
+    color: $gray-600 !important;
+    font-weight: 400;
+}
+
 body {
     font-family: "Poppins", sans-serif !important;
 }

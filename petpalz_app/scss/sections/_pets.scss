@@ -1,5 +1,9 @@
 @use "../custom" as *;
 
+.breadcrumb {
+  margin-top: 3px;
+}
+
 .breadcrumb-item a:not(.active) {
   color: $black;
   text-decoration: none;
@@ -9,8 +13,113 @@
   }
 }
 
-.categories {
+.sort-dropdown {
+  .sort-btn {
+    font-size: 0.875rem;
+    transition-duration: 0ms;
+    border: 1px solid $black;
+    &:hover {
+      border: 1px solid $black;
+    }
+  }
+
+  .show:first-of-type {
+    border-color: $info;
+    border-width: 2px;
+  }
+
+  .sort-menu {
+    border-color: $gray-400 !important;
+    border-width: 0.5px !important;
+    .dropdown-item {
+      font-size: 0.805rem;
+      font-weight: 500;
+      &:hover {
+        background-color: rgba(101, 154, 253, 0.2) !important;
+      }
+    }
+  }
+}
+
+.breadcrumb-item {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.filter-column {
+  & > h1 {
+    cursor: default;
+    margin-top: 0 !important;
+  }
+  h1 {
+    color: $gray-800;
+    width: 100%;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-bottom: 1px solid $gray-400;
+  }
   a {
-    color: $gray-700 !important;
+    font-size: 0.825rem;
+    color: $gray-800;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.categories {
+  & > .row > a {
+    margin-bottom: 7px;
+    line-clamp: 1px;
+  }
+  .category {
+    text-decoration: none;
+  }
+}
+
+.filter-form {
+  .filter-label {
+    width: 100%;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-bottom: 1px solid $gray-400;
+  }
+  .form-check {
+    input {
+      cursor: pointer;
+    }
+    label {
+      font-size: 0.875rem;
+      margin-bottom: 0;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.category-description {
+  color: $gray-700;
+  h1 {
+    font-size: 1.875rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.875rem;
+  }
+  a {
+    font-size: 0.775rem;
   }
 }

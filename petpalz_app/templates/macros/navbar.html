@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% macro navbar(email, language) %}
+{% macro navbar(search) %}
 <nav class="navbar navbar-expand-md bg-secondary fixed-top d-flex flex-column pb-0">
   <div class="container-fluid container-xxl d-flex justify-content-center">
     <div class="navbar-down-md-row row pt-2 pb-3 align-items-center w-100">
@@ -14,27 +14,93 @@
         >
           <i class="fas fa-angles-right fs-4"></i>
         </button>
+        {% if session['username'] %}
+        <a
+          class="text-decoration-none d-md-none"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasAccount"
+          aria-controls="offcanvasAccount"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-user-large fs-4"></i>
+        </a>
+        <div
+          class="offcanvas d-md-none offcanvas-start"
+          tabindex="-1"
+          id="offcanvasAccount"
+          aria-labelledby="offcanvasAccountLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasAccountLabel">
+              Hello, {{ session['username'] }}!
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body justify-content-between">
+            <ul class="text-account">
+              <li class="list-unstyled">
+                <a class="text-decoration-none disabled" href="/">Track orders</a>
+              </li>
+              <li class="list-unstyled">
+                <a class="text-decoration-none" href="/logout">Log out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        {% else %}
         <a href="{{ url_for('pages.login') }}" class="text-decoration-none d-md-none">
           <i class="fas fa-user-large fs-4"></i>
         </a>
+        {% endif %}
       </div>
       <div class="col-logo col-lg-2 col-md-2 d-flex justify-content-md-end">
         <a
           id="navbar__logo"
           class="navbar__logo text-md-end"
           href="{{ url_for('pages.home') }}"
-        > 
+        >
           <img class="w-100" src="/static/img/PET PALZ.png" alt="Pet Palz Logo"
         /></a>
       </div>
       <div class="col-search-bar col-lg-7 col-md-6">
-       <!-- ////////// SEARCH BAR /////////// -->
+        <!-- ////////// SEARCH BAR /////////// -->
         <form class="d-flex form-inputs" action="/search" method="get">
-          <input class="form-control" type="text" name="query" placeholder="Search any product..." />
+          <input
+            class="form-control"
+            type="text"
+            name="query"
+            value = "{{ search }}"
+            placeholder="Search any product..."
+            autocomplete="off"
+            required
+          />
           <button type="submit" class="button"><i class="fa fa-search"></i></button>
         </form>
       </div>
       <div class="col-ruser-content col-lg-3 col-md-4">
+        {% if session["username"] %}
+        <div class="dropdown user-account__dropdown">
+          <a class="user-account btn btn-light pe-4">
+            <div class="col-6 d-flex justify-content-center">
+              <i class="far fa-user fs-4"></i>
+            </div>
+            <div class="col-6 px-0">
+              <h3>Hello,</h3>
+              <p>{{ session["username"] }}!</p>
+            </div>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item disabled" href="/">Track orders</a></li>
+            <li><a class="dropdown-item" href="/logout">Log out</a></li>
+          </ul>
+        </div>
+        {% else %}
         <a href="{{ url_for('pages.login') }}" class="user-account btn btn-light pe-4">
           <div class="col-6 d-flex justify-content-center">
             <i class="far fa-user fs-4"></i>
@@ -44,9 +110,10 @@
             <p>Register</p>
           </div>
         </a>
+        {% endif %}
         <a
           class="user-content__ico text-decoration-none"
-          href="{{ url_for('pages.cart') }}"
+          href="{{ url_for('pages.cart') if session['username'] else url_for('pages.login') }}"
         >
           <i class="fas fa-cart-shopping fs-4"></i>
         </a>
@@ -82,7 +149,11 @@
               <a href="/dog" class="btn dropdown-btn px-3 py-2"> Dogs </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/dog/food">Dog Food</a></li>
-                <li><a class="dropdown-item" href="/dog/accessories">Apparel & Accessories</a></li>
+                <li>
+                  <a class="dropdown-item" href="/dog/accessories"
+                    >Apparel & Accessories</a
+                  >
+                </li>
                 <li><a class="dropdown-item disabled">Dog Toys</a></li>
                 <li><a class="dropdown-item disabled">Cleaning & Beauty</a></li>
                 <li><a class="dropdown-item disabled">Medicines</a></li>
@@ -95,10 +166,14 @@
               onmouseover="darkenScreen()"
               onmouseout="normalizeScreen()"
             >
-              <a href="/cat" class="btn drop dropdown-btn px-3 py-2"> Cats </a>
+              <a href="/cat" class="btn dropdown-btn px-3 py-2"> Cats </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/cat/food">Cat Food</a></li>
-                <li><a class="dropdown-item" href="/cat/accessories">Apparel & Accessories</a></li>
+                <li>
+                  <a class="dropdown-item" href="/cat/accessories"
+                    >Apparel & Accessories</a
+                  >
+                </li>
                 <li><a class="dropdown-item disabled">Cat Toys</a></li>
                 <li><a class="dropdown-item disabled">Cleaning & Beauty</a></li>
                 <li><a class="dropdown-item disabled">Medicines</a></li>

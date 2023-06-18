@@ -1,28 +1,127 @@
 <!DOCTYPE html>
-{% extends 'layout.html' %} {% block main_content %}
-<div class="container" style="margin-top: 200px">
-  <div class="row justify-content-start">
-    {% for product in products %}
-    <div class="col-md-2 col-4 p-3">
-      <a class="text-decoration-none" href="#">
-        <div class="product-card card border-0">
-          <img
-            class="px-1 pb-4"
-            src="/static/img/products/{{ product.img }}.jpg"
-            alt="Product"
-          />
-          <h3>{{ product.title }}</h3>
-          <div class="price-holder">
-            <div class="display-price">
-              <span class="price"> {{ product.prices[0] }} </span>
-              <span class="original-price"> {{ product.prices[1] }} </span>
-            </div>
-            <span class="times-price"> {{ product.prices[2] }} </span>
-          </div>
+{% extends 'layout.html' %}  {%
+  block main_content %}
+  <div class="custom-container" style="padding-top: 144px">
+    <div class="row pets-row justify-content-between">
+      <nav class="col-6 pt-1 pb-1" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="/">Pet Shop</a>
+          </li>
+          <li class="breadcrumb-item active">
+            <a class="text-decoration-none opacity-50">Search</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            <a class="text-decoration-none opacity-50">{{ search }}</a>
+          </li>
+        </ol>
+      </nav>
+      <div class="col-6 text-end align-items-center">
+        <div class="dropdown sort-dropdown">
+          <button
+            class="sort-btn btn py-2 px-sm-5 px-4 dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Sort By
+          </button>
+          <ul class="dropdown-menu sort-menu" aria-labelledby="dropdownMenuButton">
+            <li>
+              <a class="dropdown-item btn px-4 py-2" onclick="submitForm('1')"
+                >Price: Low to High</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item btn px-4 py-2" onclick="submitForm('-1')"
+                >Price: High to Low</a
+              >
+            </li>
+          </ul>
         </div>
-      </a>
+      </div>
     </div>
-    {% endfor %}
+    <div class="row mt-4">
+      <div class="col-md-2 d-md-inline d-none filter-column">
+        <h1>Filter products</h1>
+        <a href="{{ url_for('pages.search', query=search)}}">
+          Clear filters<i class="fa-regular fa-trash-can ms-1"></i>
+        </a>
+        <form
+          id="filter-form"
+          class="filter-form"
+          method="POST"
+        >
+          {% for section in categories %}
+          <label class="filter-label">{{ section | capitalize }}</label>
+          <div class="form-group">
+            {% for categor in categories[section] %}
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="category-{{ section }}-{{ loop.index }}"
+                name="category-{{ section }}"
+                value="{{ categor }}"
+                {%
+                if
+                categor
+                in
+                selected_categories
+                %}checked{%
+                endif
+                %}
+              />
+              <label
+                class="form-check-label category-label"
+                for="category-{{ section }}-{{ loop.index }}"
+              >
+                {{ categor }}
+              </label>
+            </div>
+            {% endfor %}
+          </div>
+          {% endfor %}
+        </form>
+      </div>
+  
+      <div class="col-md-10">
+        <h1 class="no-results">Results for "{{search}}"</h1>
+        {% if products %}
+        <div class="row justify-content-start p-md-4 p-sm-3 p-4">
+          {% for product in products %}
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <a
+              class="text-decoration-none"
+              href="{{ url_for('pages.product', p=product.title)}}"
+            >
+              <div class="product-card card border-0 m-4">
+                <img
+                  class="px-1 pb-4"
+                  src="/static/img/products/{{ product.img }}.jpg"
+                  alt="Product"
+                />
+                <h3>{{ product.title }}</h3>
+                <div class="price-holder">
+                  <div class="display-price">
+                    <span class="price"> ${{ product.prices[0] }} </span>
+                    <span class="original-price">
+                      {{ '$' if product.prices[1] }}{{product.prices[1] }}
+                    </span>
+                  </div>
+                  <span class="times-price"> {{ product.prices[2] }} </span>
+                </div>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+        {% else %}
+        <p class="mt-3 no-results">Your search did not return any approximate results.</p>
+        {% endif %}
+      </div>
+    </div>
   </div>
-</div>
-{% endblock main_content %}
+  {% endblock main_content %}
+  

@@ -1,10 +1,437 @@
 <!DOCTYPE html>
-{% extends 'layout.html' %} {% block header %}
-<nav class="navbar bg-secondary">
-  <div class="container justify-content-center justify-content-md-start">
-      <a class="navbar-brand" href="{{ url_for('pages.home') }}">
-        <img class="w-100" src="../static/img/PET PALZ.png" alt="Pet Palz Logo"
-      /></a>
+{% extends 'layout.html' %} {% block main_content %} {% if products %}
+<div class="custom-cart-container cart">
+  <h1 class="fw-bolder">Your Pet Palz Cart</h1>
+  <div class="row w-100 m-0">
+    <div class="col-md-8 col-12 p-0">
+      <div class="container-fluid pt-md-5 pt-3">
+        <div class="row d-flex align-items-center mb-3 sections">
+          <div class="col row d-flex align-items-center">
+            <h5>Products</h5>
+          </div>
+          <div class="col row d-flex align-items-center">
+            <h5 class="col-4 text-center">Price</h5>
+            <h5 class="col-4 text-center">Quantity</h5>
+            <h5 class="col-4 text-center">Total</h5>
+          </div>
+        </div>
+        {% for product in products %}
+        <div
+          class="row ps-1 mt-3 py-4 product-row d-flex justify-content-center align-items-center border rounded"
+        >
+          <div class="col-md row d-flex align-items-center">
+            <div class="col-2 p-0 d-flex align-items-center">
+              <img
+                class="img-fluid"
+                src="/static/img/products/{{ product.img }}.jpg"
+                alt="Product"
+              />
+            </div>
+            <div class="col-10">
+              <h3>{{ product.title }}</h3>
+            </div>
+          </div>
+          <div class="col-md row d-flex align-items-center">
+            <div class="col-4 text-center price text-nowrap">{{ product.prices[0] }}</div>
+            <div class="col-4 text-center p-0 mb-3">
+              <form class="form__quantity mt-3" method="post">
+                <div
+                  class="form-group row d-flex justify-content-center align-items-center"
+                >
+                  <button
+                    class="btn btn-outline-info col-2"
+                    type="button"
+                    onclick="changeValue(this, -1)"
+                  >
+                    -
+                  </button>
+                  <input
+                    class="btn btn-outline-info col-3"
+                    type="number"
+                    name="value"
+                    value="{{ user.cart[product._id] }}"
+                    pattern="[0-9]*"
+                    min="1"
+                    max="100"
+                    step="1"
+                    autocomplete="off"
+                    onblur="handleBlur(this)"
+                  />
+                  <button
+                    class="btn btn-outline-info col-2"
+                    type="button"
+                    onclick="changeValue(this, 1)"
+                  >
+                    +
+                  </button>
+                  <a
+                    class="text-info p-0 col-2"
+                    href="{{ url_for('pages.delete_product', p=product._id) }}"
+                  >
+                    <i class="fa-regular fa-trash-can ms-1"></i>
+                  </a>
+                </div>
+                <input type="hidden" name="product_id" value="{{ product._id }}" />
+              </form>
+            </div>
+            <div class="col-4 text-center fw-bold price text-nowrap">
+              {{ (product.prices[0] * user.cart[product._id]) | round(2) }}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="container-fluid mt-5">
+        <div class="row text-primary text-start">
+          <div class="col-6">
+            <h2 class="p-1">Recommended Products</h2>
+          </div>
+          <div class="col-6 text-end">
+            <button
+              class="btn justify-content-center"
+              type="button"
+              data-bs-target="#carousel2Autoplaying"
+              data-bs-slide="prev"
+            >
+              <i class="fa-solid fa-circle-arrow-left fs-md-2 fs-1 text-info"></i>
+            </button>
+            <button
+              class="btn justify-content-center"
+              type="button"
+              data-bs-target="#carousel2Autoplaying"
+              data-bs-slide="next"
+            >
+              <i class="fa-solid fa-circle-arrow-right fs-md-2 fs-1 text-info"></i>
+            </button>
+          </div>
+        </div>
+        <div
+          id="carousel2Autoplaying"
+          class="carousel carousel-dark slide mb-5 mt-2"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row justify-content-between">
+                <div class="col-md-3 col-sm-4 col-6 p-3">
+                  <a
+                    class="text-decoration-none"
+                    href="{{ url_for('pages.product', p='Royal Canin Breed Health Nutrition Labrador Retriever Adult Dry Dog Food, 30 lbs. Bag')}}"
+                  >
+                    <div class="product-card card border-0">
+                      <img
+                        class="px-1 pb-4"
+                        src="/static/img/products/DogFood1.jpg"
+                        alt="Product"
+                      />
+                      <h3>
+                        Royal Canin Breed Health Nutrition Labrador Retriever Adult Dry
+                        Dog Food, 30 lbs. Bag
+                      </h3>
+                      <div class="price-holder">
+                        <div class="display-price">
+                          <span class="price"> $78.99 </span>
+                          <span class="original-price"> $98.99 </span>
+                        </div>
+                        <span class="times-price">or 6 times of $20.00</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-3 col-sm-4 col-6 p-3">
+                  <a
+                    class="text-decoration-none"
+                    href="{{ url_for('pages.product', p='Purina ONE Dry Dog Food Lamb and Rice Formula - 16.5 lb. Bag')}}"
+                  >
+                    <div class="product-card card border-0">
+                      <img
+                        class="px-1 pb-4"
+                        src="/static/img/products/DogFood2.jpg"
+                        alt="Product"
+                      />
+                      <h3>
+                        Purina ONE Dry Dog Food Lamb and Rice Formula - 16.5 lb. Bag
+                      </h3>
+                      <div class="price-holder">
+                        <div class="display-price">
+                          <span class="price"> $32.50 </span>
+                          <span class="original-price"> $55.00 </span>
+                        </div>
+                        <span class="times-price">or 2 times of $22.80</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-3 col-sm-4 d-sm-block d-none p-3">
+                  <a
+                    class="text-decoration-none"
+                    href="{{ url_for('pages.product', p='Purina Moist & Meaty Wet Dog Food, Chopped Burger - 36 ct. Pouch')}}"
+                  >
+                    <div class="product-card card border-0">
+                      <img
+                        class="px-1 pb-4"
+                        src="/static/img/products/DogFood3.jpg"
+                        alt="Product"
+                      />
+                      <h3>
+                        Purina Moist & Meaty Wet Dog Food, Chopped Burger - 36 ct. Pouch
+                      </h3>
+                      <div class="price-holder">
+                        <div class="display-price">
+                          <span class="price"> $20.48 </span>
+                          <span class="original-price"> $28.78 </span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-3 d-md-block d-none p-3">
+                  <a
+                    class="text-decoration-none"
+                    href="{{ url_for('pages.product', p='Purina Fancy Feast Grilled Wet Cat Food Seafood Collection in Wet Cat Food Variety Pack - (24) 3 oz. Cans')}}"
+                  >
+                    <div class="product-card card border-0">
+                      <img
+                        class="px-1 pb-4"
+                        src="/static/img/products/CatFood1.jpg"
+                        alt="Product"
+                      />
+                      <h3>
+                        Purina Fancy Feast Grilled Wet Cat Food Seafood Collection in Wet
+                        Cat Food Variety Pack - (24) 3 oz. Cans
+                      </h3>
+                      <div class="price-holder">
+                        <div class="display-price">
+                          <span class="price"> $24.50 </span>
+                          <span class="original-price"> $30.00 </span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="row justify-content-between">
+                <div class="col-md-3 col-sm-4 col-6 p-3">
+                  <a
+                    class="text-decoration-none"
+                    href="{{ url_for('pages.product', p='Royal Canin Breed Health Nutrition Labrador Retriever Adult Dry Dog Food, 30 lbs. Bag')}}"
+                  >
+                    <div class="product-card card border-0">
+                      <img
+                        class="px-1 pb-4"
+                        src="/static/img/products/DogFood1.jpg"
+                        alt="Product"
+                      />
+                      <h3>
+                        Royal Canin Breed Health Nutrition Labrador Retriever Adult Dry
+                        Dog Food, 30 lbs. Bag
+                      </h3>
+                      <div class="price-holder">
+                        <div class="display-price">
+                          <span class="price"> $78.99 </span>
+                          <span class="original-price"> $98.99 </span>
+                        </div>
+                        <span class="times-price">or 6 times of $20.00</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-3 col-sm-4 col-6 p-3">
+                  <a
+                    class="text-decoration-none"
+                    href="{{ url_for('pages.product', p='Purina ONE Dry Dog Food Lamb and Rice Formula - 16.5 lb. Bag')}}"
+                  >
+                    <div class="product-card card border-0">
+                      <img
+                        class="px-1 pb-4"
+                        src="/static/img/products/DogFood2.jpg"
+                        alt="Product"
+                      />
+                      <h3>
+                        Purina ONE Dry Dog Food Lamb and Rice Formula - 16.5 lb. Bag
+                      </h3>
+                      <div class="price-holder">
+                        <div class="display-price">
+                          <span class="price"> $32.50 </span>
+                          <span class="original-price"> $55.00 </span>
+                        </div>
+                        <span class="times-price">or 2 times of $22.80</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-3 col-sm-4 d-sm-block d-none p-3">
+                  <a
+                    class="text-decoration-none"
+                    href="{{ url_for('pages.product', p='Purina Moist & Meaty Wet Dog Food, Chopped Burger - 36 ct. Pouch')}}"
+                  >
+                    <div class="product-card card border-0">
+                      <img
+                        class="px-1 pb-4"
+                        src="/static/img/products/DogFood3.jpg"
+                        alt="Product"
+                      />
+                      <h3>
+                        Purina Moist & Meaty Wet Dog Food, Chopped Burger - 36 ct. Pouch
+                      </h3>
+                      <div class="price-holder">
+                        <div class="display-price">
+                          <span class="price"> $20.48 </span>
+                          <span class="original-price"> $28.78 </span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-3 d-md-block d-none p-3">
+                  <a
+                    class="text-decoration-none"
+                    href="{{ url_for('pages.product', p='Purina Fancy Feast Grilled Wet Cat Food Seafood Collection in Wet Cat Food Variety Pack - (24) 3 oz. Cans')}}"
+                  >
+                    <div class="product-card card border-0">
+                      <img
+                        class="px-1 pb-4"
+                        src="/static/img/products/CatFood1.jpg"
+                        alt="Product"
+                      />
+                      <h3>
+                        Purina Fancy Feast Grilled Wet Cat Food Seafood Collection in Wet
+                        Cat Food Variety Pack - (24) 3 oz. Cans
+                      </h3>
+                      <div class="price-holder">
+                        <div class="display-price">
+                          <span class="price"> $24.50 </span>
+                          <span class="original-price"> $30.00 </span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</nav>
-{% endblock header %}
+    <div class="col-md-4 col-12 ps-xl-5 ps-lg-4 ps-md-3 pe-md-0 p-0">
+      <div class="delivery">
+        <h2 class="mb-3">What is your CEP?</h2>
+        <form method="POST" action="{{ url_for('pages.validate_cep') }}">
+          <div class="row align-items-center">
+            <div class="form-inputs col-lg-7 col-md-12">
+              <input
+                type="number"
+                class="form-control"
+                name="cep"
+                id="cep"
+                required
+                pattern="\d{5}-?\d{3}"
+                placeholder="00000-000"
+              />
+              <button class="button" type="submit">Apply</button>
+            </div>
+            <a
+              class="col-lg-5 col-md-12 mt-lg-0 mt-md-3 text-decoration-none pb-1"
+              target="_blank"
+              href="https://buscacepinter.correios.com.br/app/endereco/index.php"
+            >
+              <p>I don't know my CEP</p>
+            </a>
+          </div>
+          {% if session['address'] == 'error' %}
+          <span class="alert" id="cep-error" style="color: red"
+            >Invalid CEP. Type a valid CEP.</span
+          >
+          {% endif %}
+        </form>
+        <p class="mt-2 opacity-50 text-center">Delivery only in Brazil.</p>
+        {% if session['address'] != None and session['address'] != 'error' %}
+        <div class="delivery-address mt-4">
+          <h2 class="mb-2">Delivery Address</h2>
+          <div class="card p-2">
+            <p>{{ session['address']['logradouro'] }}</p>
+            <p>
+              {{ session['address']['bairro'] + ' - ' + session['address']['localidade'] +
+              ' - ' + session['address']['uf'] }}
+            </p>
+            <p>CEP: {{ session['address']['cep'] }}</p>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      <div class="discount-coupon mt-5">
+        <h2 class="px-4 mb-2 fw-bold text-black">Discout Coupon</h2>
+        <form class="px-4" method="post">
+          <input
+            type="text"
+            placeholder="Type your discont coupon"
+            class="form-control"
+            name="discount_coupon"
+            required
+          />
+        </form>
+      </div>
+      <div class="resume mt-5">
+        <h2>Order Summary</h2>
+        <div class="container-fluid">
+          <div class="row pt-4">
+            <p class="col">Value of products <em>({{ count }})</em></p>
+            <p class="fw-bolder col text-end">$ {{ total | round(2) }}</p>
+          </div>
+          <div class="row pt-3">
+            <p class="col">Delivery time</p>
+            <p class="fw-bolder col text-end unavailable">Unavailable</p>
+          </div>
+          <div class="row pt-3">
+            <p class="col">Delivery to <em>{{ session['address']['cep'] }}</em></p>
+            <p class="fw-bolder col text-end green">Free</p>
+          </div>
+          <div class="row pt-3">
+            <h2 class="col text-black">Total</h2>
+            <h2 class="col text-end text-black">$ {{ total | round(2) }}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="cart-buttons">
+        <a href="" class="btn btn-info w-100 mt-4">Go to payment</a>
+        <a href="{{ url_for('pages.home')}}" class="btn btn-outline-black w-100 mt-3"
+          >Find more products</a
+        >
+      </div>
+      <div class="flags border-top mt-5 row border-black">
+        <p class="fw-bold p-0 mt-3 mb-1">Payment methods</p>
+        <div class="w-100 p-0">
+          {% for i in range(1,8) %}
+          <img class="img-fluid" src="/static/img/flags/{{'flag' + i | string}}.svg" />
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% else %}
+<div class="container cart">
+  <h1>Your Pet Palz Cart is empty</h1>
+  <h6>
+    To make a purchase, browse through the website menu, search for your product, or
+    <a class="text-info" href="{{ url_for('pages.home') }}">click here</a>.
+  </h6>
+</div>
+{% endif %} {% endblock main_content %} {% block footer %}
+<footer
+  class="text-center text-lg-start text-muted"
+  style="padding-top: 120px;"
+>
+  <div
+    class="text-center p-4"
+    style="font-size: 0.825rem; background-color: rgba(224, 224, 224, 0.8);"
+  >
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" style="font-size: 0.825rem" href="/">PetPalz.com</a>
+  </div>
+</footer>
+{% endblock footer %}
