@@ -319,7 +319,7 @@
     </div>
     <div class="col-md-4 col-12 ps-xl-5 ps-lg-4 ps-md-3 pe-md-0 p-0">
       <div class="delivery">
-        <h2 class="mb-3">What is your CEP?</h2>
+        <h2 class="mb-3">What is your ZIP?</h2>
         <form method="POST" action="{{ url_for('pages.validate_cep') }}">
           <div class="row align-items-center">
             <div class="form-inputs col-lg-7 col-md-12">
@@ -339,7 +339,7 @@
               target="_blank"
               href="https://buscacepinter.correios.com.br/app/endereco/index.php"
             >
-              <p>I don't know my CEP</p>
+              <p>I don't know my ZIP</p>
             </a>
           </div>
           {% if session['address'] == 'error' %}
