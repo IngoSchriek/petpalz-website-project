@@ -3,7 +3,7 @@ from flask import Flask
 from dotenv import load_dotenv
 from pymongo import MongoClient
 
-from petpalz_app.routes import pages
+from app.routes import pages
 
 load_dotenv()
 
