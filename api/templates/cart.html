@@ -66,7 +66,7 @@
                   </button>
                   <a
                     class="text-info p-0 col-2"
-                    href="{{ url_for('pages.delete_product', p=product._id) }}"
+                    href="{{ url_for('delete_product', p=product._id) }}"
                   >
                     <i class="fa-regular fa-trash-can ms-1"></i>
                   </a>
@@ -117,7 +117,7 @@
                 <div class="col-md-3 col-sm-4 col-6 p-3">
                   <a
                     class="text-decoration-none"
-                    href="{{ url_for('pages.product', p='Royal Canin Breed Health Nutrition Labrador Retriever Adult Dry Dog Food, 30 lbs. Bag')}}"
+                    href="{{ url_for('product', p='Royal Canin Breed Health Nutrition Labrador Retriever Adult Dry Dog Food, 30 lbs. Bag')}}"
                   >
                     <div class="product-card card border-0">
                       <img
@@ -142,7 +142,7 @@
                 <div class="col-md-3 col-sm-4 col-6 p-3">
                   <a
                     class="text-decoration-none"
-                    href="{{ url_for('pages.product', p='Purina ONE Dry Dog Food Lamb and Rice Formula - 16.5 lb. Bag')}}"
+                    href="{{ url_for('product', p='Purina ONE Dry Dog Food Lamb and Rice Formula - 16.5 lb. Bag')}}"
                   >
                     <div class="product-card card border-0">
                       <img
@@ -166,7 +166,7 @@
                 <div class="col-md-3 col-sm-4 d-sm-block d-none p-3">
                   <a
                     class="text-decoration-none"
-                    href="{{ url_for('pages.product', p='Purina Moist & Meaty Wet Dog Food, Chopped Burger - 36 ct. Pouch')}}"
+                    href="{{ url_for('product', p='Purina Moist & Meaty Wet Dog Food, Chopped Burger - 36 ct. Pouch')}}"
                   >
                     <div class="product-card card border-0">
                       <img
@@ -189,7 +189,7 @@
                 <div class="col-md-3 d-md-block d-none p-3">
                   <a
                     class="text-decoration-none"
-                    href="{{ url_for('pages.product', p='Purina Fancy Feast Grilled Wet Cat Food Seafood Collection in Wet Cat Food Variety Pack - (24) 3 oz. Cans')}}"
+                    href="{{ url_for('product', p='Purina Fancy Feast Grilled Wet Cat Food Seafood Collection in Wet Cat Food Variety Pack - (24) 3 oz. Cans')}}"
                   >
                     <div class="product-card card border-0">
                       <img
@@ -218,7 +218,7 @@
                 <div class="col-md-3 col-sm-4 col-6 p-3">
                   <a
                     class="text-decoration-none"
-                    href="{{ url_for('pages.product', p='Royal Canin Breed Health Nutrition Labrador Retriever Adult Dry Dog Food, 30 lbs. Bag')}}"
+                    href="{{ url_for('product', p='Royal Canin Breed Health Nutrition Labrador Retriever Adult Dry Dog Food, 30 lbs. Bag')}}"
                   >
                     <div class="product-card card border-0">
                       <img
@@ -243,7 +243,7 @@
                 <div class="col-md-3 col-sm-4 col-6 p-3">
                   <a
                     class="text-decoration-none"
-                    href="{{ url_for('pages.product', p='Purina ONE Dry Dog Food Lamb and Rice Formula - 16.5 lb. Bag')}}"
+                    href="{{ url_for('product', p='Purina ONE Dry Dog Food Lamb and Rice Formula - 16.5 lb. Bag')}}"
                   >
                     <div class="product-card card border-0">
                       <img
@@ -267,7 +267,7 @@
                 <div class="col-md-3 col-sm-4 d-sm-block d-none p-3">
                   <a
                     class="text-decoration-none"
-                    href="{{ url_for('pages.product', p='Purina Moist & Meaty Wet Dog Food, Chopped Burger - 36 ct. Pouch')}}"
+                    href="{{ url_for('product', p='Purina Moist & Meaty Wet Dog Food, Chopped Burger - 36 ct. Pouch')}}"
                   >
                     <div class="product-card card border-0">
                       <img
@@ -290,7 +290,7 @@
                 <div class="col-md-3 d-md-block d-none p-3">
                   <a
                     class="text-decoration-none"
-                    href="{{ url_for('pages.product', p='Purina Fancy Feast Grilled Wet Cat Food Seafood Collection in Wet Cat Food Variety Pack - (24) 3 oz. Cans')}}"
+                    href="{{ url_for('product', p='Purina Fancy Feast Grilled Wet Cat Food Seafood Collection in Wet Cat Food Variety Pack - (24) 3 oz. Cans')}}"
                   >
                     <div class="product-card card border-0">
                       <img
@@ -320,7 +320,7 @@
     <div class="col-md-4 col-12 ps-xl-5 ps-lg-4 ps-md-3 pe-md-0 p-0">
       <div class="delivery">
         <h2 class="mb-3">What is your ZIP?</h2>
-        <form method="POST" action="{{ url_for('pages.validate_cep') }}">
+        <form method="POST" action="{{ url_for('validate_cep') }}">
           <div class="row align-items-center">
             <div class="form-inputs col-lg-7 col-md-12">
               <input
@@ -398,7 +398,7 @@
       </div>
       <div class="cart-buttons">
         <a href="" class="btn btn-info w-100 mt-4">Go to payment</a>
-        <a href="{{ url_for('pages.home')}}" class="btn btn-outline-black w-100 mt-3"
+        <a href="{{ url_for('home')}}" class="btn btn-outline-black w-100 mt-3"
           >Find more products</a
         >
       </div>
@@ -418,7 +418,7 @@
   <h1>Your Pet Palz Cart is empty</h1>
   <h6>
     To make a purchase, browse through the website menu, search for your product, or
-    <a class="text-info" href="{{ url_for('pages.home') }}">click here</a>.
+    <a class="text-info" href="{{ url_for('home') }}">click here</a>.
   </h6>
 </div>
 {% endif %} {% endblock main_content %} {% block footer %}

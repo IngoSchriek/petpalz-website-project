@@ -54,7 +54,7 @@
           </div>
         </div>
         {% else %}
-        <a href="{{ url_for('pages.login') }}" class="text-decoration-none d-md-none">
+        <a href="{{ url_for('login') }}" class="text-decoration-none d-md-none">
           <i class="fas fa-user-large fs-4"></i>
         </a>
         {% endif %}
@@ -63,9 +63,9 @@
         <a
           id="navbar__logo"
           class="navbar__logo text-md-end"
-          href="{{ url_for('pages.home') }}"
+          href="{{ url_for('home') }}"
         >
-          <img class="w-100" src="../../static/img/Pet Palz.png" alt="Pet Palz Logo"
+          <img class="w-100" src="../../static/img/PetPalz.png" alt="Pet Palz Logo"
         /></a>
       </div>
       <div class="col-search-bar col-lg-7 col-md-6">
@@ -101,7 +101,7 @@
           </ul>
         </div>
         {% else %}
-        <a href="{{ url_for('pages.login') }}" class="user-account btn btn-light pe-4">
+        <a href="{{ url_for('login') }}" class="user-account btn btn-light pe-4">
           <div class="col-6 d-flex justify-content-center">
             <i class="far fa-user fs-4"></i>
           </div>
@@ -113,7 +113,7 @@
         {% endif %}
         <a
           class="user-content__ico text-decoration-none"
-          href="{{ url_for('pages.cart') if session['username'] else url_for('pages.login') }}"
+          href="{{ url_for('cart') if session['username'] else url_for('login') }}"
         >
           <i class="fas fa-cart-shopping fs-4"></i>
         </a>

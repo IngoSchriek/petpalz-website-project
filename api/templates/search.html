@@ -45,7 +45,7 @@
     <div class="row mt-4">
       <div class="col-md-2 d-md-inline d-none filter-column">
         <h1>Filter products</h1>
-        <a href="{{ url_for('pages.search', query=search)}}">
+        <a href="{{ url_for('search', query=search)}}">
           Clear filters<i class="fa-regular fa-trash-can ms-1"></i>
         </a>
         <form
@@ -94,7 +94,7 @@
           <div class="col-lg-3 col-md-4 col-sm-6 col-12">
             <a
               class="text-decoration-none"
-              href="{{ url_for('pages.product', p=product.title)}}"
+              href="{{ url_for('product', p=product.title)}}"
             >
               <div class="product-card card border-0 m-4">
                 <img
