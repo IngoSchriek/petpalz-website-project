@@ -64,6 +64,15 @@ def login():
         return redirect(url_for("home"))
 
     form = LoginForm()
+    if request.args.get('d') == 'demo':
+        user_data = app.db.user.find_one({"email": "test@example.com"})
+        user = User(**user_data)
+        session["user_id"] = user._id
+        session["email"] = user.email
+        session["username"] = user.username
+        session["address"] = None
+
+        return redirect(url_for("login"))
     if form.validate_on_submit():
         
         user_data = app.db.user.find_one({"email": form.email.data})

@@ -31,6 +31,7 @@ block header %}
         {% endfor %} {% endwith %} {{ form.hidden_tag() }} {{
         render_text_field(form.email) }} {{ render_text_field(form.password) }}
         <div class="mt-4">{{ form.submit(class_="btn btn-info w-100") }}</div>
+        <div class="text-black" style="font-size: 12px;">Enter with a <a class="text-info" href="{{ url_for('login', d='demo')}}">demo account</a>.</div>
       </form>
     </div>
     <div class="col-lg-6 col-12 create-account px-md-5">
