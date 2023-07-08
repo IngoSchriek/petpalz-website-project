@@ -13,9 +13,9 @@ from flask import (
     request
 )
 
-from app.models import Product, User
-from app.forms import LoginForm, RegisterForm
-from app.utils import login_required, update_amount
+from api.models import Product, User
+from api.forms import LoginForm, RegisterForm
+from api.utils import login_required, update_amount
 
 pages = Blueprint(
     "pages", __name__, template_folder="templates", static_folder="static"
